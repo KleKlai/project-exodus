@@ -68,7 +68,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="{{ route('user.index') }}">User</a>
-                            <a class="dropdown-item" href="{{ route('user.index') }}">Garbage</a>
+                            <a class="dropdown-item" href="{{ route('user.trash') }}">Trash</a>
                         </div>
                         </li>
                     </ul>
