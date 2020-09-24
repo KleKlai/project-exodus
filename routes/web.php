@@ -40,11 +40,13 @@ Route::middleware('auth')->group(function() {
     Route::delete('profile/{user}', 'Admin\ProfileController@deleteUser')->name('profile.delete');
     Route::patch('password/{user}', 'Auth\ChangePasswordController@change')->name('password.change');
 
+    Route::get('trash', 'Admin\Partial@trashUser')->name('user.trash'); // Get All Trash User
+
 });
 
-//TODO: Art component
 Route::group(['middleware' => ['role_or_permission:Super-admin|read util|create util|delete util']], function () {
 
+    //TODO: Art component
     Route::namespace('Art')->prefix('component')->name('art.')->group( function () {
 
             Route::resource('subject', 'SubjectController', ['except' => 'create', 'show', 'edit', 'update']);
@@ -57,22 +59,23 @@ Route::group(['middleware' => ['role_or_permission:Super-admin|read util|create 
 
     });
 
+    //TODO: Register Component
+    Route::namespace('Register')->prefix('component')->name('register.')->group( function() {
+
+        Route::resource('gallery', 'GalleryController');
+        Route::resource('regional', 'RegionalController');
+        Route::resource('special', 'SpecialController');
+
+    });
+
+    Route::patch('art/status/{art}', 'ArtUtility@status');
+
 });
 
-Route::namespace('Register')->prefix('component')->name('register.')->group( function() {
-
-    Route::resource('gallery', 'GalleryController');
-    Route::resource('regional', 'RegionalController');
-    Route::resource('special', 'SpecialController');
-
-});
-
-Route::group(['middleware' => ['role_or_permission:Super-admin|read util|create util|delete util']], function () {
+Route::group(['middleware' => ['role_or_permission:Super-admin|read art|create art|delete art|update art']], function () {
 
     Route::resource('art', 'ArtController');
 });
-
-Route::patch('art/status/{art}', 'ArtUtility@status');
 
 Route::namespace('Help')->group( function() {
 
