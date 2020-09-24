@@ -13,6 +13,7 @@ This project comes with pre installed packages that can help you in your develop
 - **[Debugger](https://laravel.com/docs/7.x/telescope)**
 - **[Flash Message](https://github.com/laracasts/flash)**
 - **[Log Reader](https://laravelarticle.com/laravel-log-reader)**
+- **[News Letter](https://github.com/spatie/laravel-newsletter)**
 
 ### Candidate 
 - **[HTML Email](https://github.com/Snowfire/Beautymail)**

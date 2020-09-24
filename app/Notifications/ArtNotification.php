@@ -11,6 +11,8 @@ class ArtNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
+    public $data;
+
     /**
      * Create a new notification instance.
      *

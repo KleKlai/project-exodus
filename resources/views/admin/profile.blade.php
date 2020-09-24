@@ -21,12 +21,20 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputPassword4">Full Name</label>
-                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}">
-                @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
+
+                <div class="input-group mb-2">
+                    @if(!empty($user->email_verified_at))
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="fa fa-check-circle"></i></div>
+                        </div>
+                    @endif
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}">
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
             </div>
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Email</label>

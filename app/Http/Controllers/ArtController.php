@@ -78,9 +78,9 @@ class ArtController extends Controller
     public function store(ArtStoreRequest $request)
     {
 
-        DB::beginTransaction();
+        try{
 
-        try {
+            DB::beginTransaction();
 
             $file_name = Upload::ArtUploadFile($request);
 
@@ -88,32 +88,25 @@ class ArtController extends Controller
             $request->request->add(['user_id' => \Auth::user()->id]);
             $request->request->add(['status' => 'Pending']);
 
-            try{
+            // Send to database
+            Art::create($request->except(['file']));
 
-                // Send to database
-                Art::create($request->except(['file']));
+            DB::commit();
 
-                DB::commit();
+            flash('Great! Your art has been uploaded successfully.')->success();
 
-                flash('Great! Your art has been uploaded successfully.')->success();
+            return redirect()->route('art.index');
 
-            }catch (QueryException $e) {
+        }catch (Exception $e) {
 
-                /**
-                 * Log first the error message
-                 */
-                activity('Art')->causedBy(Auth::user()->id)
-                    ->log(Auth::user()->name . ' uploaded art ' . $art->name);
+            flash("Whoops! something bad happen. Don't worry its not your fault.")->error();
 
-                flash("Whoops! something bad happen. Don't worry its not your fault.")->error();
-            }
-
-        } catch (\Exception $ex) {
-            DB::rollback();
             Log::error($ex);
+            DB::rollback();
+
+            return redirect()->back();
         }
 
-        return redirect()->home();
     }
 
     /**

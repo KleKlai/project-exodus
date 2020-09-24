@@ -8,16 +8,7 @@
         </div>
         <div class="col">
 
-            @if($art->status == 'Pending')
-                {{ $header_status = 'primary' }}
-            @elseif($art->status == 'Approve')
-                {{ $header_status = 'success' }}
-            @elseif($art->status == 'Revise')
-                {{ $header_status = 'warning' }}
-            @elseif($art->status == 'Reject')
-                {{ $header_status = 'danger' }}
-            @endif
-            <div class="btn btn-{{ $header_status }} btn-lg  btn-block mb-2">
+            <div class="btn btn-primary btn-lg  btn-block mb-2">
                 {{ strtoupper($art->status) }}
             </div>
 
@@ -124,7 +115,7 @@
             <div class="card mt-2 {{ ($art->status == 'Pending') ? 'd-none' : '' }}" >
                 <div class="card-header">Remark</div>
                 <div class="card-body">
-                    {{ $art->remark }}
+                    {{ $art->remark ?? 'No Remarks'}}
                 </div>
             </div>
 

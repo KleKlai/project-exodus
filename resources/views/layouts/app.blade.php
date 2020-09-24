@@ -33,46 +33,48 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('art.index') }}">Art</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Art Component
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('art.category.index') }}">Category</a>
-                            <a class="dropdown-item" href="{{ route('art.material.index') }}">Material</a>
-                            <a class="dropdown-item" href="{{ route('art.medium.index') }}">Medium</a>
-                            <a class="dropdown-item" href="{{ route('art.size.index') }}">Size</a>
-                            <a class="dropdown-item" href="{{ route('art.style.index') }}">Style</a>
-                            <a class="dropdown-item" href="{{ route('art.subject.index') }}">Subject</a>
-                            <a class="dropdown-item" href="{{ route('art.status.index') }}">Status</a>
-                        </div>
+                @auth
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ route('art.index') }}">Art</a>
                         </li>
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Register Component
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('register.gallery.index') }}">Gallery</a>
-                            <a class="dropdown-item" href="{{ route('register.regional.index') }}">Regional</a>
-                            <a class="dropdown-item" href="{{ route('register.special.index') }}">Special</a>
-                        </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Management
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('user.index') }}">User</a>
-                            <a class="dropdown-item" href="{{ route('user.index') }}">Garbage</a>
-                        </div>
-                        </li>
-                    </ul>
-                </div>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Art Component
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{{ route('art.category.index') }}">Category</a>
+                                <a class="dropdown-item" href="{{ route('art.material.index') }}">Material</a>
+                                <a class="dropdown-item" href="{{ route('art.medium.index') }}">Medium</a>
+                                <a class="dropdown-item" href="{{ route('art.size.index') }}">Size</a>
+                                <a class="dropdown-item" href="{{ route('art.style.index') }}">Style</a>
+                                <a class="dropdown-item" href="{{ route('art.subject.index') }}">Subject</a>
+                                <a class="dropdown-item" href="{{ route('art.status.index') }}">Status</a>
+                            </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Register Component
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{{ route('register.gallery.index') }}">Gallery</a>
+                                <a class="dropdown-item" href="{{ route('register.regional.index') }}">Regional</a>
+                                <a class="dropdown-item" href="{{ route('register.special.index') }}">Special</a>
+                            </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Management
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{{ route('user.index') }}">User</a>
+                                <a class="dropdown-item" href="{{ route('user.index') }}">Garbage</a>
+                            </div>
+                            </li>
+                        </ul>
+                    </div>
+                @endauth
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -157,7 +159,15 @@
         <main class="py-4">
 
             <div class="container">
-
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
 
             @yield('content')

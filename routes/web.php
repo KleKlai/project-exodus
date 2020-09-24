@@ -83,4 +83,8 @@ Route::namespace('Help')->group( function() {
     Route::get('contact', 'ContactController@index');
     Route::post('contact', 'ContactController@send');
 
+    Route::resource('FAQs' , 'FAQsController');
+
 });
+
+Route::post('newsletter', 'NewsletterController@store');

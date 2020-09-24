@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Register;
 
+use App\Http\Requests\RegisterComponent;
 use App\Http\Controllers\Controller;
 use App\Model\Register\Regional;
 use Illuminate\Http\Request;
@@ -36,9 +37,11 @@ class RegionalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegisterComponent $request)
     {
         Regional::create($request->all());
+
+        flash($request->name . ' added successfully.')->success();
 
         return redirect()->back();
     }
