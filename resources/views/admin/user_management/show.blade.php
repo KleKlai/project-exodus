@@ -17,7 +17,7 @@
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item
-                                {{ (!empty($user->email_verified_at)) ? 'd-none' : '' }}"
+                                {{ (!empty($user->verified)) ? 'd-none' : '' }}"
                                 href="{{ route('profile.approve', $user) }}">
                                 Approve
                             </a>
@@ -41,8 +41,8 @@
                         </div>
                         <div class="col-1">
                             <i class="fa fa-check-circle mt-2
-                            {{ (!empty($user->email_verified_at)) ? 'text-success' : 'd-none' }}"
-                            data-toggle="tooltip" data-placement="top" title="{{ $user->email_verified_at}}"
+                            {{ (!empty($user->verified)) ? 'text-success' : 'd-none' }}"
+                            data-toggle="tooltip" data-placement="top" title="{{ $user->verified}}"
                             >
                         </i>
                         </div>

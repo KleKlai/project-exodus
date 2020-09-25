@@ -37,7 +37,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="email" class="col-sm-2 col-form-label">{{ __('Category') }}</label>
 
                             <div class="col-sm-10">
@@ -118,7 +118,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Biography</label>
@@ -160,7 +160,7 @@
                     <form action="{{ route('override.permission', $user) }}" method="POST" id="override-permission">
                         @csrf
 
-                        @foreach ($permission as $permission)
+                        @forelse ($permission as $permission)
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="{{ $permission->name }}" name="permissions[]"
                                 @if($user->getAllPermissions()->pluck('name')->contains($permission->name)) checked @endif
@@ -169,10 +169,14 @@
                                     {{ $permission->name }}
                                 </label>
                             </div>
-                        @endforeach
+
+                        @empty
+                            <h4 class="text-center">Not yet verified</h4>
+                        @endforelse
                     </form>
 
-                    <button type="submit" class="btn btn-outline-info mt-3" data-toggle="modal" data-target="#overridePermission">Override</button>
+                    <button type="submit" class="btn btn-outline-info mt-3 @if(empty($user->verified)) d-none @endif" data-toggle="modal" data-target="#overridePermission">Override</button>
+
                 </div>
             </div>
         </div>

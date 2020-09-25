@@ -28,7 +28,13 @@ class ArtController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'update','delete']]);
+
+        $this->middleware('permission:create art', ['only' => ['create', 'store']]);
+
+        $this->middleware('permission:update art', ['only' => ['edit', 'update']]);
+
+        $this->middleware('permission:delete art', ['only' => ['destroy']]);
     }
 
     /**
@@ -120,7 +126,9 @@ class ArtController extends Controller
      */
     public function show(Art $art)
     {
-        Log::info(Auth::user()->name . ' open ' . $art->name . ' ' .$art->category);
+        if(Auth::check()){ // If there is authenticated user log it
+            Log::info(Auth::user()->name . ' open ' . $art->name . ' ' .$art->category);
+        }
 
         $status = Status::all('name');
 

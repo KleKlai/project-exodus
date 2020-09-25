@@ -23,7 +23,7 @@
                 <label for="inputPassword4">Full Name</label>
 
                 <div class="input-group mb-2">
-                    @if(!empty($user->email_verified_at))
+                    @if(!empty($user->verified))
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-check-circle"></i></div>
                         </div>

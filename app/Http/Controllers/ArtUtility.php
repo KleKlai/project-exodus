@@ -11,6 +11,8 @@ class ArtUtility extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+        $this->middleware('permission:update art-status', ['only' => ['status']]);
     }
 
     // Method to change art status

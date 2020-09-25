@@ -20,9 +20,9 @@
                         <td>{{ $key+1 }}</td>
                         <td>{{ $data->name }}</td>
                         <td>
-                            @if(!empty($data->email_verified_at))
+                            @if(!empty($data->verified))
                                 <i class="fa fa-check-circle text-success"
-                                data-toggle="tooltip" data-placement="top" title="{{ $data->email_verified_at }}"></i>
+                                data-toggle="tooltip" data-placement="top" title="{{ $data->verified }}"></i>
                             @else
                             -
                             @endif

@@ -18,6 +18,8 @@ class ProfileController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+        $this->middleware('permission:approve user', ['only' => ['markVerified']]);
     }
 
     public function myProfile(User $user)
@@ -51,7 +53,7 @@ class ProfileController extends Controller
     public function markVerified(User $user)
     {
         $user->update([
-            'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'verified' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
         flash('Profile verified')->success()->important();

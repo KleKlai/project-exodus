@@ -8,11 +8,13 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['edit', 'update']]);
+
+        $this->middleware('permission:update site-about', ['only' => ['edit', 'update']]);
+    }
+
     public function index()
     {
         $about = About::first();

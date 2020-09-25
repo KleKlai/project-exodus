@@ -63,18 +63,20 @@ Route::group(['middleware' => ['role_or_permission:Super-admin|read util|create 
 
     });
 
+    //TODO: Profile Category
     Route::get('artist/category', 'Admin\Profile\TypeController@index')->name('artist.category.index');
     Route::post('artist/category/show', 'Admin\Profile\TypeController@store')->name('artist.category.store');
     Route::delete('artist/category/destroy/{id}', 'Admin\Profile\TypeController@destroy')->name('artist.category.destroy');
 
-    Route::patch('art/status/{art}', 'ArtUtility@status');
-
 });
 
-Route::group(['middleware' => ['role_or_permission:Super-admin|read art|create art|delete art|update art']], function () {
+
+Route::patch('art/status/{art}', 'ArtUtility@status');
+
+// Route::group(['middleware' => ['role_or_permission:Super-admin|read art|create art|delete art|update art']], function () {
 
     Route::resource('art', 'ArtController');
-});
+// });
 
 Route::namespace('Help')->group( function() {
 

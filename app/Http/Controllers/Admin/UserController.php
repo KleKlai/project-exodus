@@ -22,6 +22,12 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+
+        $this->middleware('permission:read user', ['only' => ['index', 'show']]);
+
+        $this->middleware('permission:update user', ['only' => ['edit', 'update']]);
+
+        $this->middleware('permission:delete user', ['only' => ['destroy']]);
     }
 
     public function index()
@@ -29,27 +35,6 @@ class UserController extends Controller
         $data = User::with('roles')->get();
 
         return view('admin.user_management.index', compact('data'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        dd($request);
     }
 
     /**
@@ -90,7 +75,8 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $roles      = Role::select('name')->get();
-        $permission = Permission::select('name')->get();
+
+        $permission = (!empty($user->verified)) ? Permission::select('name')->get() : [] ;
         $category   = Type::select('category', 'subcategory')->get();
 
         return view('admin.user_management.edit', compact(

@@ -20,18 +20,23 @@ class PermissionSeeder extends Seeder
         $update_user    = Permission::create(['name' => 'update user']);
         $delete_user    = Permission::create(['name' => 'delete user']);
         $recover_user   = Permission::create(['name' => 'recover user']);
-
+        $approve_user   = Permission::create(['name' => 'approve user']);
 
         //TODO: Artwork Model Permission
-        $read_art      = Permission::create(['name' => 'read art']);
-        $create_art    = Permission::create(['name' => 'create art']);
-        $update_art    = Permission::create(['name' => 'update art']);
-        $delete_art    = Permission::create(['name' => 'delete art']);
+        $read_art           = Permission::create(['name' => 'read art']);
+        $create_art         = Permission::create(['name' => 'create art']);
+        $update_art         = Permission::create(['name' => 'update art']);
+        $update_art_status  = Permission::create(['name' => 'update art-status']);
+        $delete_art         = Permission::create(['name' => 'delete art']);
+
 
         //TODO: Art Utilities
-        $read_util     = Permission::create(['name' => 'read util']);
-        $create_util   = Permission::create(['name' => 'create util']);
-        $delete_util   = Permission::create(['name' => 'delete util']);
+        $read_util          = Permission::create(['name' => 'read util']);
+        $create_util        = Permission::create(['name' => 'create util']);
+        $delete_util        = Permission::create(['name' => 'delete util']);
+
+        $update_page_about   = Permission::create(['name' => 'update site-about']);
+
 
         //TODO: FAQ Model Permission
         // $read_faq      = Permission::create(['name' => 'read faq']);
@@ -56,7 +61,7 @@ class PermissionSeeder extends Seeder
          */
 
         //TODO: Admin User Model
-        $admin->givePermissionTo('read user', 'update user', 'delete user');
+        $admin->givePermissionTo('read user', 'update user', 'delete user', 'approve user');
 
         //TODO: Admin Artwork Model
         $admin->givePermissionTo('read art', 'update art', 'delete art');
@@ -65,7 +70,7 @@ class PermissionSeeder extends Seeder
         $admin->givePermissionTo('create faq', 'update faq', 'delete faq');
 
         //TODO: Admin Art Utilities
-        $admin->givePermissionTo('read util', 'create util', 'delete util');
+        $admin->givePermissionTo('read util', 'create util', 'delete util', 'update site-about');
 
         //TODO: Admin System Log
         $admin->givePermissionTo('read syslog');
@@ -75,7 +80,7 @@ class PermissionSeeder extends Seeder
          */
 
         //TODO: Artwork
-        $curator->givePermissionTo('read art', 'update art');
+        $curator->givePermissionTo('read art', 'update art', 'update art-status');
 
         /**
          * Artist
