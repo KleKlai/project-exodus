@@ -35,9 +35,13 @@ Route::prefix('notification')->name('notification.')->middleware('auth')->group(
 Route::middleware('auth')->group(function() {
 
     Route::resource('user', 'Admin\UserController');
+    Route::post('user/permission/{user}', 'Admin\Partial@overridePermission')->name('override.permission');
+    Route::patch('user/restore/{id}', 'Admin\Partial@restore')->name('user.restore');
+    Route::delete('user/forceDelete/{id}', 'Admin\Partial@forceDelete')->name('user.force.delete');
     Route::get('profile/{user}', 'Admin\ProfileController@myProfile')->name('my.profile');
     Route::patch('profile/{user}', 'Admin\ProfileController@updateUser')->name('profile.update');
     Route::delete('profile/{user}', 'Admin\ProfileController@deleteUser')->name('profile.delete');
+    Route::get('profile/approve/{user}', 'Admin\ProfileController@markVerified')->name('profile.approve');
     Route::patch('password/{user}', 'Auth\ChangePasswordController@change')->name('password.change');
 
     Route::get('trash', 'Admin\Partial@trashUser')->name('user.trash'); // Get All Trash User

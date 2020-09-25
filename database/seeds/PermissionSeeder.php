@@ -16,7 +16,7 @@ class PermissionSeeder extends Seeder
 
         //TODO: User Model Permission
         $read_user      = Permission::create(['name' => 'read user']);
-        $create_user    = Permission::create(['name' => 'create user']);
+        // $create_user    = Permission::create(['name' => 'create user']);
         $update_user    = Permission::create(['name' => 'update user']);
         $delete_user    = Permission::create(['name' => 'delete user']);
         $recover_user   = Permission::create(['name' => 'recover user']);
@@ -34,7 +34,7 @@ class PermissionSeeder extends Seeder
         $delete_util   = Permission::create(['name' => 'delete util']);
 
         //TODO: FAQ Model Permission
-        $read_faq      = Permission::create(['name' => 'read faq']);
+        // $read_faq      = Permission::create(['name' => 'read faq']);
         $create_faq    = Permission::create(['name' => 'create faq']);
         $update_faq    = Permission::create(['name' => 'update faq']);
         $delete_faq    = Permission::create(['name' => 'delete faq']);

@@ -62,6 +62,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+
         //Get all user art
         $art = Art::where('user_id', $user->id)->with('user')->select('uuid', 'name')->get();
 
@@ -91,6 +92,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $roles      = Role::select('name')->get();
+        $permission = Permission::select('name')->get();
         $gallery    = Gallery::select('name')->get();
         $regional   = Regional::select('name')->get();
         $special    = Special::select('name')->get();
@@ -99,6 +101,7 @@ class UserController extends Controller
             [
                 'user',
                 'roles',
+                'permission',
                 'gallery',
                 'regional',
                 'special'
@@ -140,7 +143,13 @@ class UserController extends Controller
             'bio'           => $request->bio,
         ]);
 
-        $user->assignRole($request->roles);
+        //Detach all user roles first
+        $user->roles()->detach();
+
+        //Assign new roles
+        $user->syncRoles($request->roles);
+
+        flash('Save')->success();
 
         return back();
     }

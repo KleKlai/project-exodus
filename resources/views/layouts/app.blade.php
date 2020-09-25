@@ -40,7 +40,7 @@
                             <a class="nav-link" href="{{ route('art.index') }}">Art</a>
                         </li>
                         <li class="nav-item dropdown">
-<<<<<<< HEAD
+
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Art Component
                             </a>
@@ -70,34 +70,12 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="{{ route('user.index') }}">User</a>
-                                <a class="dropdown-item" href="{{ route('user.index') }}">Garbage</a>
+                                <a class="dropdown-item" href="{{ route('user.trash') }}">Garbage</a>
                             </div>
                             </li>
                         </ul>
                     </div>
                 @endauth
-=======
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Register Component
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('register.gallery.index') }}">Gallery</a>
-                            <a class="dropdown-item" href="{{ route('register.regional.index') }}">Regional</a>
-                            <a class="dropdown-item" href="{{ route('register.special.index') }}">Special</a>
-                        </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Management
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('user.index') }}">User</a>
-                            <a class="dropdown-item" href="{{ route('user.trash') }}">Trash</a>
-                        </div>
-                        </li>
-                    </ul>
-                </div>
->>>>>>> a89a2cc2f38edd6315d991640498d47d9f63cf9d
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->

@@ -9,12 +9,18 @@
                 <div class="card-header">
                     Profile
 
+
                     <div class="dropdown float-right">
                         <a href="javascript:void();" class="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-ellipsis-v"></i>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item
+                                {{ (!empty($user->email_verified_at)) ? 'd-none' : '' }}"
+                                href="{{ route('profile.approve', $user) }}">
+                                Approve
+                            </a>
                             <a class="dropdown-item" href="{{ route('user.edit', $user) }}">Edit</a>
                             <a class="dropdown-item" href="javascript();" data-toggle="modal" data-target="#deleteAccount">Delete</a>
                         </div>
@@ -30,8 +36,15 @@
                     </div>
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-9">
                             <input type="text" disabled class="form-control-plaintext" value="{{ $user->email }}">
+                        </div>
+                        <div class="col-1">
+                            <i class="fa fa-check-circle mt-2
+                            {{ (!empty($user->email_verified_at)) ? 'text-success' : 'd-none' }}"
+                            data-toggle="tooltip" data-placement="top" title="{{ $user->email_verified_at}}"
+                            >
+                        </i>
                         </div>
                     </div>
                     <div class="form-group row">

@@ -38,3 +38,25 @@
         </div>
     </div>
 </div>
+
+<!-- Override Permission User Modal -->
+<div class="modal fade" id="overridePermission" tabindex="-1" role="dialog" aria-labelledby="overridePermission" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form action="#" method="POST">
+
+                <div class="modal-body text-center">
+                <h3>Are you sure you would like to override user permission?</h3>
+
+                <p class="font-weight-normal">
+                    This may cause some serious trouble. And may affect user interaction with the system.
+                </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form="override-permission" class="btn btn-dark">Proceed Anyway</button>
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

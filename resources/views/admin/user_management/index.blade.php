@@ -8,7 +8,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
-                <th scope="col">Category</th>
+                <th scope="col">Verified</th>
                 <th scope="col">Role</th>
                 <th scope="col"></th>
             </tr>
@@ -19,7 +19,14 @@
                     <tr>
                         <td>{{ $key+1 }}</td>
                         <td>{{ $data->name }}</td>
-                        <td>{{ $data->category }}</td>
+                        <td>
+                            @if(!empty($data->email_verified_at))
+                                <i class="fa fa-check-circle text-success"
+                                data-toggle="tooltip" data-placement="top" title="{{ $data->email_verified_at }}"></i>
+                            @else
+                            -
+                            @endif
+                        </td>
                         <td>
                             @foreach($data->getRoleNames() as $role)
                                 <span class="badge badge-success">{{ strtoupper($role) }}</span>
