@@ -51,24 +51,6 @@ class RegisterController extends Controller
     }
 
     /**
-     * Override Registeration Form
-     */
-    public function showRegistrationForm()
-    {
-        $gallery    = Gallery::all();
-        $regional   = Regional::all();
-        $special    = Special::all();
-
-        return view('auth.register', compact(
-            [
-                'gallery',
-                'regional',
-                'special'
-            ]
-        ));
-    }
-
-    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -79,8 +61,6 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name'          => ['required', 'string', 'max:255'],
             'email'         => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'mobile'        => ['required', 'min:10', 'max:10', 'string'],
-            'category'      => ['required'],
             'password'      => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -93,27 +73,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // Custom Validate to add subcategory data
-        $subcategory = null;
-
-        if(!empty($data['gallery'])){
-            $subcategory = $data['gallery'];
-        }
-
-        if(!empty($data['regional'])){
-            $subcategory = $data['regional'];
-        }
-
-        if(!empty($data['special'])){
-            $subcategory = $data['special'];
-        }
 
         $user = User::create([
             'name'          => $data['name'],
             'email'         => $data['email'],
-            'mobile'        => $data['mobile'],
-            'category'      => $data['category'],
-            'subcategory'   => $subcategory,
             'password'      => Hash::make($data['password']),
         ]);
 

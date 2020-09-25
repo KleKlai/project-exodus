@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class);
         $this->call(StatusSeeder::class);
 
-        //TODO: Art Register Component
-        $this->call(GalleryRegisterSeeder::class);
+        //TODO: Art Profile Component
+        $this->call(ProfileCategorySeeder::class);
 
     }
 }

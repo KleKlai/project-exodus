@@ -63,14 +63,9 @@ Route::group(['middleware' => ['role_or_permission:Super-admin|read util|create 
 
     });
 
-    //TODO: Register Component
-    Route::namespace('Register')->prefix('component')->name('register.')->group( function() {
-
-        Route::resource('gallery', 'GalleryController');
-        Route::resource('regional', 'RegionalController');
-        Route::resource('special', 'SpecialController');
-
-    });
+    Route::get('artist/category', 'Admin\Profile\TypeController@index')->name('artist.category.index');
+    Route::post('artist/category/show', 'Admin\Profile\TypeController@store')->name('artist.category.store');
+    Route::delete('artist/category/destroy/{id}', 'Admin\Profile\TypeController@destroy')->name('artist.category.destroy');
 
     Route::patch('art/status/{art}', 'ArtUtility@status');
 
@@ -90,7 +85,7 @@ Route::namespace('Help')->group( function() {
     Route::get('contact', 'ContactController@index');
     Route::post('contact', 'ContactController@send');
 
-    Route::resource('FAQs' , 'FAQsController');
+    Route::resource('faqs' , 'FAQsController');
 
 });
 

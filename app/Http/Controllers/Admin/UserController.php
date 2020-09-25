@@ -15,9 +15,7 @@ use App\User;
 use Auth;
 
 //Register Component
-use App\Model\Register\Gallery;
-use App\Model\Register\Regional;
-use App\Model\Register\Special;
+use App\Model\Profile\Type;
 
 class UserController extends Controller
 {
@@ -93,18 +91,14 @@ class UserController extends Controller
     {
         $roles      = Role::select('name')->get();
         $permission = Permission::select('name')->get();
-        $gallery    = Gallery::select('name')->get();
-        $regional   = Regional::select('name')->get();
-        $special    = Special::select('name')->get();
+        $category   = Type::select('category', 'subcategory')->get();
 
         return view('admin.user_management.edit', compact(
             [
                 'user',
                 'roles',
                 'permission',
-                'gallery',
-                'regional',
-                'special'
+                'category',
             ]
         ));
     }

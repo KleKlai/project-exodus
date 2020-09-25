@@ -56,21 +56,13 @@
                             </li>
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Register Component
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ route('register.gallery.index') }}">Gallery</a>
-                                <a class="dropdown-item" href="{{ route('register.regional.index') }}">Regional</a>
-                                <a class="dropdown-item" href="{{ route('register.special.index') }}">Special</a>
-                            </div>
-                            </li>
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Management
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="{{ route('user.index') }}">User</a>
                                 <a class="dropdown-item" href="{{ route('user.trash') }}">Garbage</a>
+                                <a class="dropdown-item" href="{{ url('syslog') }}">System Log</a>
+                                <a class="dropdown-item" href="{{ route('artist.category.index') }}">Profile Category</a>
                             </div>
                             </li>
                         </ul>

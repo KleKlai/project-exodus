@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Help;
 use App\Http\Controllers\Controller;
 use App\Model\FAQs;
 use Illuminate\Http\Request;
+use Auth;
 
 class FAQsController extends Controller
 {
 
     public function index()
     {
-        $data = FAQs::select(['title', 'description'])->get();
+        $data = FAQs::select(['id', 'uuid', 'title'])->get();
 
         return view('help.faq.index', compact('data'));
     }
@@ -34,7 +35,16 @@ class FAQsController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        $request->validate([
+            'title'         => 'required | string',
+            'description'   => 'required',
+        ]);
+
+        FAQs::create($request->all());
+
+        flash('FAQs Added successfully')->success()->important();
+
+        return redirect()->route('FAQs.index');
     }
 
     /**
@@ -43,9 +53,9 @@ class FAQsController extends Controller
      * @param  \App\Model\FAQs  $fAQs
      * @return \Illuminate\Http\Response
      */
-    public function show(FAQs $fAQs)
+    public function show(FAQs $faqs)
     {
-        //
+        dd($faqs);
     }
 
     /**
@@ -54,7 +64,7 @@ class FAQsController extends Controller
      * @param  \App\Model\FAQs  $fAQs
      * @return \Illuminate\Http\Response
      */
-    public function edit(FAQs $fAQs)
+    public function edit(FAQs $faqs)
     {
         //
     }
@@ -66,7 +76,7 @@ class FAQsController extends Controller
      * @param  \App\Model\FAQs  $fAQs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FAQs $fAQs)
+    public function update(Request $request, FAQs $faqs)
     {
         //
     }
@@ -77,7 +87,7 @@ class FAQsController extends Controller
      * @param  \App\Model\FAQs  $fAQs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FAQs $fAQs)
+    public function destroy(FAQs $faqs)
     {
         //
     }

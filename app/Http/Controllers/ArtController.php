@@ -82,9 +82,12 @@ class ArtController extends Controller
 
             DB::beginTransaction();
 
-            $file_name = Upload::ArtUploadFile($request);
+            if($request->hasFile('file'))
+            {
+                $file_name = Upload::ArtUploadFile($request);
+                $request->merge(['attachment' => $file_name]);
+            }
 
-            $request->merge(['attachment' => $file_name]);
             $request->request->add(['user_id' => \Auth::user()->id]);
             $request->request->add(['status' => 'Pending']);
 
