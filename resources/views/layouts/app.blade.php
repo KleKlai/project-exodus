@@ -8,6 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="{{ asset('/images/nav.ico') }}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -15,15 +18,166 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Datatables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
     <!-- Flash Message CSS -->
     {{--  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  --}}
+
+    <style>
+        * {
+            font-family: 'Montserrat';
+        }
+        body {
+            background-color: white;
+        }
+
+        #app {
+            margin-top: 17px;
+        }
+
+        .container {
+            margin-top: 50px;
+            /* display: grid;
+            justify-content: start;
+            gap: 30px;
+            grid-template-areas:
+                "left picture"; */
+        }
+
+        #pattern {
+            width: 100%;
+            background: url('/images/spattern.png');
+            background-repeat: repeat;
+            background-size: 34px 27px;
+        }
+
+
+        .root {
+            margin-top: 50px;
+            display: grid;
+            gap: 30px;
+            grid-template-rows: 420px;
+            grid-template-areas:
+                "logo form"
+        }
+
+        .logo { grid-area: logo;}
+        .form { grid-area: form;}
+
+        input {
+            padding: 5px;
+            width: 100%;
+            height: 40px;
+            margin-bottom: 10px;
+
+            background-color: transparent;
+            border-bottom: 2px solid black;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid gray;
+        }
+
+        select {
+            padding: 5px;
+            width: 100%;
+            height: 40px;
+            margin-bottom: 10px;
+
+            background-color: transparent;
+            border-bottom: 2px solid black;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid gray;
+
+        }
+
+        button {
+            font-size: 20px;
+            font-weight: bold;
+            background-color: transparent;
+            border-bottom: 2px solid black;
+            color: #b78032;
+            border: none;
+            outline: none;
+        }
+
+        button:focus {
+            outline: 0 !important;
+        }
+
+        .back {
+            font-size: 25px;
+            color: black;
+            text-decoration: none !important;
+        }
+
+        .back:hover {
+            color: #b78032;
+        }
+
+        .link {
+            font-size: 30px;
+            text-decoration: none;
+            color: #b78032;
+            font-weight: bold;
+        }
+
+        .link:hover{
+            text-decoration: none;
+            color: #5e4119;
+        }
+
+        .navbar {
+            box-shadow: none !important;
+        }
+
+        .nav-link {
+            font-size: 12px;
+            color: black;
+        }
+
+        .nav-link:hover{
+            text-decoration: none;
+            color: #b78032 !important;
+        }
+
+        .active {
+            color: #b78032 !important;
+        }
+
+        .footer {
+            margin-top: 50px;
+        }
+
+        .picture {
+            width: 100%;
+        }
+
+        .files {
+            padding: 0 !important;
+        }
+
+        .artContainer{
+            width: 32.5%;
+        }
+
+        .artImage{
+            width: 100%;
+        }
+
+    </style>
 </head>
 <body>
     <div id="app">
+        <div id="pattern">
+            <img src="/images/spattern.png" alt="">
+        </div>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -36,68 +190,45 @@
                 @auth
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('art.index') }}">Art</a>
-                        </li>
-                        <li class="nav-item dropdown">
-<<<<<<< HEAD
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Art Component
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ route('art.category.index') }}">Category</a>
-                                <a class="dropdown-item" href="{{ route('art.material.index') }}">Material</a>
-                                <a class="dropdown-item" href="{{ route('art.medium.index') }}">Medium</a>
-                                <a class="dropdown-item" href="{{ route('art.size.index') }}">Size</a>
-                                <a class="dropdown-item" href="{{ route('art.style.index') }}">Style</a>
-                                <a class="dropdown-item" href="{{ route('art.subject.index') }}">Subject</a>
-                                <a class="dropdown-item" href="{{ route('art.status.index') }}">Status</a>
-                            </div>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('art.index') }}">Art</a>
                             </li>
                             <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Register Component
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ route('register.gallery.index') }}">Gallery</a>
-                                <a class="dropdown-item" href="{{ route('register.regional.index') }}">Regional</a>
-                                <a class="dropdown-item" href="{{ route('register.special.index') }}">Special</a>
-                            </div>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Art Component
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ route('art.category.index') }}">Category</a>
+                                    <a class="dropdown-item" href="{{ route('art.material.index') }}">Material</a>
+                                    <a class="dropdown-item" href="{{ route('art.medium.index') }}">Medium</a>
+                                    <a class="dropdown-item" href="{{ route('art.size.index') }}">Size</a>
+                                    <a class="dropdown-item" href="{{ route('art.style.index') }}">Style</a>
+                                    <a class="dropdown-item" href="{{ route('art.subject.index') }}">Subject</a>
+                                    <a class="dropdown-item" href="{{ route('art.status.index') }}">Status</a>
+                                </div>
                             </li>
                             <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Management
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ route('user.index') }}">User</a>
-                                <a class="dropdown-item" href="{{ route('user.index') }}">Garbage</a>
-                            </div>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Register Component
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ route('register.gallery.index') }}">Gallery</a>
+                                    <a class="dropdown-item" href="{{ route('register.regional.index') }}">Regional</a>
+                                    <a class="dropdown-item" href="{{ route('register.special.index') }}">Special</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Management
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ route('user.index') }}">User</a>
+                                    <a class="dropdown-item" href="{{ route('user.index') }}">Garbage</a>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 @endauth
-=======
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Register Component
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('register.gallery.index') }}">Gallery</a>
-                            <a class="dropdown-item" href="{{ route('register.regional.index') }}">Regional</a>
-                            <a class="dropdown-item" href="{{ route('register.special.index') }}">Special</a>
-                        </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Management
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('user.index') }}">User</a>
-                            <a class="dropdown-item" href="{{ route('user.trash') }}">Trash</a>
-                        </div>
-                        </li>
-                    </ul>
-                </div>
->>>>>>> a89a2cc2f38edd6315d991640498d47d9f63cf9d
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
