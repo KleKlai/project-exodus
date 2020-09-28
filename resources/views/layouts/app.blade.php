@@ -64,7 +64,10 @@
                                 <a class="dropdown-item" href="{{ url('syslog') }}">System Log</a>
                                 <a class="dropdown-item" href="{{ route('artist.category.index') }}">Profile Category</a>
                             </div>
-                            </li>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ route('ticket.index') }}">Support</a>
+                        </li>
                         </ul>
                     </div>
                 @endauth

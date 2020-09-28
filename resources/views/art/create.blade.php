@@ -205,7 +205,7 @@
                 </div>
 
                 <div class="mt-2">
-                    <a href="/art" class="btn border-none">Cancel</a>
+                    <a href="{{ url()->previous() }}" class="btn border-none">Cancel</a>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Model\Profile\Type;
 
-class ProfileCategorySeeder extends Seeder
+class ProfileCatSeeder extends Seeder
 {
     /**
      * Run the database seeds.

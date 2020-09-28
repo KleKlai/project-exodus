@@ -92,3 +92,10 @@ Route::namespace('Help')->group( function() {
 });
 
 Route::post('newsletter', 'NewsletterController@store');
+
+Route::resource('ticket', 'Help\Ticket\TicketController');
+Route::post('ticket/note/{ticket}', 'Help\Ticket\ComponentController@saveNotes')->name('ticket.note');
+Route::post('ticket/archive/{ticket}', 'Help\Ticket\ComponentController@archive')->name('ticket.archive');
+Route::patch('ticket/status/{ticket}', 'Help\Ticket\ComponentController@status')->name('ticket.status');
+
+Route::resource('conversation', 'Help\Ticket\ConversationController');

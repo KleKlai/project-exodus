@@ -23,9 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MaterialSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(StatusSeeder::class);
-
-        //TODO: Art Profile Component
-        $this->call(ProfileCategorySeeder::class);
+        $this->call(ProfileCatSeeder::class);
 
     }
 }

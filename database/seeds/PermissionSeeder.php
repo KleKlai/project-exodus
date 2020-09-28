@@ -49,6 +49,15 @@ class PermissionSeeder extends Seeder
         $read_syslog     = Permission::create(['name' => 'read syslog']);
         $delete_systlog  = Permission::create(['name' => 'delete syslog']);
 
+        //TODO: Support Ticket
+        $ticket = [
+            'edit ticket', 'update ticket', 'update ticket-status', 'archive ticket', 'delete ticket'
+        ];
+
+        foreach($ticket as $ticket){
+            Permission::create(['name' => $ticket]);
+        }
+
         //TODO: Roles
         $super_admin    = Role::create(['name' => 'Super-admin']);
         $admin          = Role::create(['name' => 'Admin']);
@@ -75,6 +84,8 @@ class PermissionSeeder extends Seeder
         //TODO: Admin System Log
         $admin->givePermissionTo('read syslog');
 
+        //TODO: Admin Support Ticket
+        $admin->givePermissionTo('edit ticket', 'update ticket', 'update ticket-status', 'archive ticket', 'delete ticket');
         /**
          * Curator
          */
