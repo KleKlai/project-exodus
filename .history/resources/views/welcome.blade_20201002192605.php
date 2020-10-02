@@ -43,7 +43,11 @@
             .picture {
                 width: 100%;
             }
-            
+
+            .small {
+                margin-top: 50px;
+                /* display: none; */
+            }
 
             .wide {
                 margin-top: 50px;
@@ -116,6 +120,20 @@
                 .link {
                     font-size: 20px;
                 }
+
+                .small {
+                    margin-top: 50px;
+                    display: block;
+                }
+
+                .wide {
+                    margin-top: 50px;
+                    display: none;
+                }
+
+                .footer {
+                    margin-top: 50px;
+                }
             }
         </style>
     </head>
@@ -124,6 +142,8 @@
             <div id="pattern">
                     <img src="/images/spattern.png" alt="">
             </div>
+
+            <!-- big screen -->
             <div class="container wide">
                 <div class="row">
                     <div class="col-md">

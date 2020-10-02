@@ -47,10 +47,15 @@
                             @enderror
                     </div>
 
-                    
-                    <div class="form-check">
-                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                        <input type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-check">
+                                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                                <input type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                        </div>
                     </div>
                     
                     @if (Route::has('password.request'))

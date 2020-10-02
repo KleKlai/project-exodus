@@ -171,10 +171,6 @@
             width: 100%;
         }
 
-        .form-check-input{
-            margin-left: -7.8rem;
-        }
-
     </style>
 </head>
 <body>

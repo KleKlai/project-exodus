@@ -172,7 +172,7 @@
         }
 
         .form-check-input{
-            margin-left: -7.8rem;
+            margin-left: -7.5rem;
         }
 
     </style>

@@ -43,7 +43,11 @@
             .picture {
                 width: 100%;
             }
-            
+
+            .small {
+                margin-top: 50px;
+                display: none;
+            }
 
             .wide {
                 margin-top: 50px;
@@ -67,10 +71,10 @@
                 font-weight: 300 !important;
             }
 
-            .day { grid-area: day; font-size: 50px;}
-            .hour { grid-area: hour; font-size: 50px;}
-            .minute { grid-area: minute; font-size: 50px;}
-            .second { grid-area: second; font-size: 50px;}
+            .days { grid-area: day; font-size: 50px;}
+            .hours { grid-area: hour; font-size: 50px;}
+            .minutes { grid-area: minute; font-size: 50px;}
+            .seconds { grid-area: second; font-size: 50px;}
             .dayl { grid-area: dayl;}
             .hourl { grid-area: hourl;}
             .minutel { grid-area: minutel;}
@@ -88,33 +92,89 @@
                 color: #5e4119;
             }
 
+            
+            li {
+                display: inline-block;
+                font-size: 1.5em;
+                list-style-type: none;
+                padding: 1em;
+                text-transform: uppercase;
+            }
+
+            li span {
+                display: block;
+                font-size: 2.5rem;
+            }
+
+            .message {
+                font-size: 4rem;
+            }
+
+            #content {
+                display: none;
+                padding: 1rem;
+            }
+
+            .emoji {
+                padding: 0 .25rem;
+            }
+
+            @media all and (max-width: 768px) {
+                h1 {
+                    font-size: 1.5rem;
+                }
+                
+                li {
+                    font-size: 1.125rem;
+                    padding: .75rem;
+                }
+                
+                li span {
+                    font-size: 3.375rem;
+                }
+            }
+
             @media (max-width: 992px) {
                 #root {
                     display: grid;
                     justify-items: center;
-                    grid-template-columns: 40px 10px 40px 10px 40px 10px 40px;
+                    grid-template-columns: 30px 10px 30px 10px 30px 10px 30px;
                     grid-template-areas:
                         "day column1 hour column2 minute column3 second"
                         "dayl . hourl . minutel . secondl";
                 }
 
-                .day { grid-area: day; font-size: 30px; margin: 0;}
-                .hour { grid-area: hour; font-size: 30px; margin: 0;}
-                .minute { grid-area: minute; font-size: 30px; margin: 0;}
-                .second { grid-area: second; font-size: 30px; margin: 0;}
-                .dayl { grid-area: dayl; font-size: 12px; margin: 0;}
-                .hourl { grid-area: hourl; font-size: 12px; margin: 0;}
-                .minutel { grid-area: minutel; font-size: 12px; margin: 0;}
-                .secondl { grid-area: secondl; font-size: 12px; margin: 0;}
+                .days { grid-area: day; font-size: 25px; margin: 0;}
+                .hours { grid-area: hour; font-size: 25px; margin: 0;}
+                .minutes { grid-area: minute; font-size: 25px; margin: 0;}
+                .seconds { grid-area: second; font-size: 25px; margin: 0;}
+                .dayl { grid-area: dayl; font-size: 10px; margin: 0;}
+                .hourl { grid-area: hourl; font-size: 10px; margin: 0;}
+                .minutel { grid-area: minutel; font-size: 10px; margin: 0;}
+                .secondl { grid-area: secondl; font-size: 10px; margin: 0;}
 
                 .column{
                     color: #b78032;
-                    font-size: 20px;
+                    font-size: 15px;
                     margin: 0;
                 }
 
                 .link {
                     font-size: 20px;
+                }
+
+                .small {
+                    margin-top: 50px;
+                    display: block;
+                }
+
+                .wide {
+                    margin-top: 50px;
+                    display: none;
+                }
+
+                .footer {
+                    margin-top: 50px;
                 }
             }
         </style>
@@ -124,6 +184,8 @@
             <div id="pattern">
                     <img src="/images/spattern.png" alt="">
             </div>
+
+            <!-- big screen -->
             <div class="container wide">
                 <div class="row">
                     <div class="col-md">
@@ -137,6 +199,12 @@
 
                                     <div class="container">
                                         <div id="countdown">
+                                            <ul>
+                                                <li><span id="days"></span>dd</li> <p class="column">:</p>
+                                                <li><span id="hours"></span>hh</li> <p class="column">:</p>
+                                                <li><span id="minutes"></span>mm</li> <p class="column">:</p>
+                                                <li><span id="seconds"></span>ss</li>
+                                            </ul>
                                             <div id="root">
                                                 <h1 class="day" id="days"></h1> <p class="column">:</p>
                                                 <h1 class="hour" id="hours"></h1> <p  class="column">:</p>
@@ -148,7 +216,29 @@
                                                 <h4 class="secondl">ss</h4>
                                             </div>
                                         </div>
+                                        <div class="message">
+                                            <div id="content">
+                                            <span class="emoji">🥳</span>
+                                            <span class="emoji">🎉</span>
+                                            <span class="emoji">🎂</span>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <!-- <countdown :time="time" :interval="100" tag="p">
+                                        <template slot-scope="props">
+                                            <div id="root">
+                                                <h1 class="day"></h1> <p class="column">:</p>
+                                                <h1 class="hour"></h1> <p  class="column">:</p>
+                                                <h1 class="minute"></h1> <p class="column">:</p>
+                                                <h1 class="second"></h1>
+                                                <h4 class="dayl">dd</h4>
+                                                <h4 class="hourl">hh</h4>
+                                                <h4 class="minutel">mm</h4>
+                                                <h4 class="secondl">ss</h4>
+                                            </div>
+                                        </template>
+                                    </countdown> -->
                                 </div>
                                 <div class="col">
                                     <a class="link" href="/register">
@@ -158,12 +248,64 @@
                                         <font-awesome-icon icon="angle-right" />
                                     </a>
                                     <p>Already have an account? <a class="link" style="font-size: 12px;" href="/login">Login</a></p>
+                                    <!-- <p>To get up-to-date news</p> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md">
                         <img class="picture" src="/images/image1.png" alt="Image1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- small screen -->
+            <div class="container small">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="col">
+                            <img src="/images/logo.png" alt="Mindanao Art Logo">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="container">
+                            <div class="row row-cols-1">
+                                <div class="col">
+                                    <h2>Living Art in New Landscape</h2>
+                                    
+                                    <div class="container">
+                                        <div id="countdown">
+                                            <ul>
+                                            <li><span id="days"></span>days</li>
+                                            <li><span id="hours"></span>Hours</li>
+                                            <li><span id="minutes"></span>Minutes</li>
+                                            <li><span id="seconds"></span>Seconds</li>
+                                            </ul>
+                                        </div>
+                                        <div class="message">
+                                            <div id="content">
+                                            <span class="emoji">🥳</span>
+                                            <span class="emoji">🎉</span>
+                                            <span class="emoji">🎂</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col  py-3">
+                                    <a class="link" href="/register">
+                                        SIGN ME UP
+                                        <font-awesome-icon icon="angle-right" />
+                                        <font-awesome-icon icon="angle-right" />
+                                        <font-awesome-icon icon="angle-right" />
+                                    </a>
+                                    <p>Already have an account? <a class="link" style="font-size: 12px;" href="/login">Login</a></p>
+                                    <p>To get up-to-date news</p>
+                                </div>
+                                <div class="col">
+                                    <img class="picture" src="/images/image1.png" alt="Image1">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -179,7 +321,7 @@
                         minute = second * 60,
                         hour = minute * 60,
                         day = hour * 24,
-                        birthday = "Oct 21, 2020 08:00:00";
+                        birthday = "Oct 21, 2020 00:00:00";
 
                 let countDown = new Date(birthday).getTime(),
                     x = setInterval(function() {    

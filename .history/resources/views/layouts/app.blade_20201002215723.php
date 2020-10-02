@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 
     <!-- Flash Message CSS -->
-    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    {{--  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  --}}
 
     <style>
         * {
@@ -70,7 +70,7 @@
         .logo { grid-area: logo;}
         .form { grid-area: form;}
 
-        .mininput {
+        input {
             padding: 5px;
             width: 100%;
             /* height: 40px; */
@@ -169,10 +169,6 @@
 
         .artImage{
             width: 100%;
-        }
-
-        .form-check-input{
-            margin-left: -7.8rem;
         }
 
     </style>

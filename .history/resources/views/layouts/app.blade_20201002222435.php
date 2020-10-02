@@ -70,7 +70,7 @@
         .logo { grid-area: logo;}
         .form { grid-area: form;}
 
-        .mininput {
+        input {
             padding: 5px;
             width: 100%;
             /* height: 40px; */
@@ -169,10 +169,6 @@
 
         .artImage{
             width: 100%;
-        }
-
-        .form-check-input{
-            margin-left: -7.8rem;
         }
 
     </style>

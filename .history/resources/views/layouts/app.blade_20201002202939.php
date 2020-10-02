@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 
     <!-- Flash Message CSS -->
-    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    {{--  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  --}}
 
     <style>
         * {
@@ -70,10 +70,10 @@
         .logo { grid-area: logo;}
         .form { grid-area: form;}
 
-        .mininput {
+        input {
             padding: 5px;
             width: 100%;
-            /* height: 40px; */
+            height: 40px;
             margin-bottom: 10px;
 
             background-color: transparent;
@@ -171,10 +171,6 @@
             width: 100%;
         }
 
-        .form-check-input{
-            margin-left: -7.8rem;
-        }
-
     </style>
 </head>
 <body>
@@ -244,14 +240,14 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
+                            @endif -->
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -329,11 +325,6 @@
             </div>
 
             @yield('content')
-
-            
-            <div class="container footer">
-                <p>Copyright 2020. Mindanao Art</p>
-            </div>
         </main>
     </div>
 

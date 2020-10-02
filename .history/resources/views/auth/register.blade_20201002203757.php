@@ -26,7 +26,7 @@
                 @csrf
 
                 <div class="form-group row">
-                    <input id="name" type="text" class="mininput @error('name') is-invalid @enderror" name="name" placeholder="Fullname" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    <input id="name" type="text" class=" @error('name') is-invalid @enderror" name="name" placeholder="Fullname" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                     @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="form-group row">
-                        <input id="email" type="email" class="mininput @error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email">
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -51,7 +51,7 @@
                                 <div class="input-group-text">+63</div>
                             </div>
 
-                            <input id="mobile" type="number" class="mininput form-control @error('mobile') is-invalid @enderror"
+                            <input id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror"
                                 name="mobile"
                                 value="{{ old('mobile') }}"
                                 required
@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="form-group row">
-                        <select name="category" id="category" onchange="showOtherDropDown()" class="mininput @error('category') is-invalid @enderror" required>
+                        <select name="category" id="category" onchange="showOtherDropDown()" class="form-control @error('category') is-invalid @enderror" required>
                             <option value="" selected>Categories</option>
                             <option value="Gallery">Gallery</option>
                             <option value="Regional Group">Regional Group</option>
@@ -86,7 +86,7 @@
                 </div>
 
                 <div class="form-group row d-none" id="gallery">
-                        <select name="gallery" class="mininput @error('gallery') is-invalid @enderror" id="galleryInput">
+                        <select name="gallery" class="form-control @error('gallery') is-invalid @enderror" id="galleryInput">
                             <option value="" selected>-</option>
                             @foreach($gallery as $data)
                                 <option value="{{ $data->name }}" {{ old('gallery') == $data->name ? "selected" :""}}>
@@ -103,7 +103,7 @@
                 </div>
 
                 <div class="form-group row d-none" id="regional">
-                        <select name="regional" class="@error('regional') is-invalid @enderror" id="regionalInput">
+                        <select name="regional" class="form-control @error('regional') is-invalid @enderror" id="regionalInput">
                             <option value="" selected>-</option>
                             @foreach($regional as $data)
                                 <option value="{{ $data->name }}" {{ old('regional') == $data->name ? "selected" :""}}>
@@ -120,7 +120,7 @@
                 </div>
 
                 <div class="form-group row d-none" id="special">
-                        <select name="special" class="mininput @error('special') is-invalid @enderror" id="specialInput">
+                        <select name="special" class="form-control @error('special') is-invalid @enderror" id="specialInput">
                             <option value="" selected>-</option>
                             @foreach($special as $data)
                                 <option value="{{ $data->name }}" {{ old('special') == $data->name ? "selected" :""}}>
@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="form-group row">
-                        <input id="password" type="password" class="mininput @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="new-password">
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -147,7 +147,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <input id="password-confirm" type="password" class="mininput" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
+                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
                 </div>
 
                 <button type="submit">{{ __('SUBMIT >>>') }}

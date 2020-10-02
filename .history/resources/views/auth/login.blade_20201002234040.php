@@ -28,7 +28,7 @@
                     @csrf
 
                     <div class="form-group row">
-                            <input id="email" type="email" class="mininput @error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            <input id="email" type="email" class="@error('email') is-invalid @enderror" name="email" placeholder="Email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="row">
-                            <input id="password" type="password" class="mininput @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="current-password">
+                            <input id="password" type="password" class="@error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="current-password">
 
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -47,19 +47,23 @@
                             @enderror
                     </div>
 
-                    
-                    <div class="form-check">
-                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                        <input type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    </div>
-                    
-                    @if (Route::has('password.request'))
-                        <div>
-                            <a href="{{ route('password.request') }}" style="font-size: 12px;">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-check">
+                                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                                <input type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            </div>
                         </div>
-                    @endif
+                        <div class="col-md">
+                            @if (Route::has('password.request'))
+                                <div>
+                                    <a href="{{ route('password.request') }}" style="font-size: 12px;">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
 
                     <button class="mt-4" type="submit">{{ __('SUBMIT >>>') }}</button>
 

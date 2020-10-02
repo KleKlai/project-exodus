@@ -147,7 +147,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <input id="password-confirm" type="password" class="mininput" name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
+                <input id="password-confirm" type="password" name="mininput password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
                 </div>
 
                 <button type="submit">{{ __('SUBMIT >>>') }}

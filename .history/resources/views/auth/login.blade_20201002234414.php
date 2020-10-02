@@ -47,19 +47,23 @@
                             @enderror
                     </div>
 
-                    
-                    <div class="form-check">
-                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                        <input type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    </div>
-                    
-                    @if (Route::has('password.request'))
-                        <div>
-                            <a href="{{ route('password.request') }}" style="font-size: 12px;">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-check">
+                                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                                <input type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            </div>
                         </div>
-                    @endif
+                        <div class="col-md">
+                            @if (Route::has('password.request'))
+                                <div>
+                                    <a href="{{ route('password.request') }}" style="font-size: 12px;">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
 
                     <button class="mt-4" type="submit">{{ __('SUBMIT >>>') }}</button>
 

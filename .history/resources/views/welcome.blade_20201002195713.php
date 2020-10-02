@@ -43,7 +43,6 @@
             .picture {
                 width: 100%;
             }
-            
 
             .wide {
                 margin-top: 50px;

@@ -43,7 +43,11 @@
             .picture {
                 width: 100%;
             }
-            
+
+            .small {
+                margin-top: 50px;
+                display: none;
+            }
 
             .wide {
                 margin-top: 50px;
@@ -116,6 +120,20 @@
                 .link {
                     font-size: 20px;
                 }
+
+                .small {
+                    margin-top: 50px;
+                    display: block;
+                }
+
+                .wide {
+                    margin-top: 50px;
+                    display: none;
+                }
+
+                .footer {
+                    margin-top: 50px;
+                }
             }
         </style>
     </head>
@@ -124,6 +142,8 @@
             <div id="pattern">
                     <img src="/images/spattern.png" alt="">
             </div>
+
+            <!-- big screen -->
             <div class="container wide">
                 <div class="row">
                     <div class="col-md">
@@ -158,12 +178,61 @@
                                         <font-awesome-icon icon="angle-right" />
                                     </a>
                                     <p>Already have an account? <a class="link" style="font-size: 12px;" href="/login">Login</a></p>
+                                    <!-- <p>To get up-to-date news</p> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md">
                         <img class="picture" src="/images/image1.png" alt="Image1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- small screen -->
+            <div class="container small">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="col">
+                            <img src="/images/logo.png" alt="Mindanao Art Logo">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="container">
+                            <div class="row row-cols-1">
+                                <div class="col">
+                                    <h2>Living Art in New Landscape</h2>
+                                    
+                                    <div class="container">
+                                        <div id="countdown">
+                                            <div id="root">
+                                                <h1 class="day" id="days"></h1> <p class="column">:</p>
+                                                <h1 class="hour" id="hours"></h1> <p  class="column">:</p>
+                                                <h1 class="minute" id="minutes"></h1> <p class="column">:</p>
+                                                <h1 class="second" id="seconds"></h1>
+                                                <h4 class="dayl">dd</h4>
+                                                <h4 class="hourl">hh</h4>
+                                                <h4 class="minutel">mm</h4>
+                                                <h4 class="secondl">ss</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col  py-3">
+                                    <a class="link" href="/register">
+                                        SIGN ME UP
+                                        <font-awesome-icon icon="angle-right" />
+                                        <font-awesome-icon icon="angle-right" />
+                                        <font-awesome-icon icon="angle-right" />
+                                    </a>
+                                    <p>Already have an account? <a class="link" style="font-size: 12px;" href="/login">Login</a></p>
+                                    <p>To get up-to-date news</p>
+                                </div>
+                                <div class="col">
+                                    <img class="picture" src="/images/image1.png" alt="Image1">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
