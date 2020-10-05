@@ -252,9 +252,6 @@
                                 <a class="nav-link" href="{{ route('art.index') }}">Auctions</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('art.index') }}">Digital Museum</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('art.index') }}">Galleries</a>
                             </li>
                             <li class="nav-item">
@@ -262,6 +259,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('art.index') }}">Special Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('art.index') }}">Digital Museum</a>
                             </li>
 
                             <div class="nav-item dropdown">

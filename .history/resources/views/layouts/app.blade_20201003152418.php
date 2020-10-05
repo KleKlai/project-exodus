@@ -249,10 +249,10 @@
                                 <a class="nav-link" href="{{ route('art.index') }}">Artist</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('art.index') }}">Auctions</a>
+                                <a class="nav-link" href="{{ route('art.index') }}">Digital Museum</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('art.index') }}">Digital Museum</a>
+                                <a class="nav-link" href="{{ route('art.index') }}">Auctions</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('art.index') }}">Galleries</a>
