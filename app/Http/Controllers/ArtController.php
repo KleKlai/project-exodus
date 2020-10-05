@@ -111,7 +111,7 @@ class ArtController extends Controller
 
             flash("Whoops! something bad happen. Don't worry its not your fault.")->error();
 
-            Log::error($ex);
+            Log::error($e);
             DB::rollback();
 
             return redirect()->back();

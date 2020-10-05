@@ -85,27 +85,17 @@
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                              <label class="text-muted" for="size">Size:</label>
                             <input type="text" class="form-control-plaintext" value="{{ $art->size }}" readonly>
                         </div>
 
-                        <div class="form-group col-md-2">
-                             <label class="text-muted" for="height">Height:</label>
-                            <input type="text" class="form-control-plaintext" value="{{ $art->height }} cm" readonly>
+                        <div class="form-group col-md-4">
+                             <label class="text-muted" for="height">Dimension:</label>
+                            <input type="text" class="form-control-plaintext" value="{{ $art->height .' x '.$art->width.' x '.$art->depth }}" readonly>
                         </div>
 
-                        <div class="form-group col-md-2">
-                             <label class="text-muted" for="width">Width:</label>
-                            <input type="text" class="form-control-plaintext" value="{{ $art->width }} cm" readonly>
-                        </div>
-
-                        <div class="form-group col-md-2">
-                             <label class="text-muted" for="depth">Depth:</label>
-                            <input type="text" class="form-control-plaintext" value="{{ $art->depth }} cm" readonly>
-                        </div>
-
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-4">
                              <label class="text-muted" for="price">Price:</label>
                             <div class="input-group mb-2">
                                 <input type="text" class="form-control-plaintext" value="₱ {{ $art->price }}" readonly>
@@ -131,6 +121,8 @@
                     <a href="{{ route('art.watch', $art->id) }}" class="btn btn-success">
                         <i class="fa fa-eye"></i>
                     </a>
+
+                    <a href="{{ route('art.reserve', $art) }}" class="btn btn-outline-info">Reserve</a>
                 </div>
             </div>
 

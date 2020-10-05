@@ -5,8 +5,12 @@ namespace App\Http\Controllers;
 use App\Services\NotificationService as Notify;
 use Illuminate\Http\Request;
 use App\Model\Art\Watch;
+use App\Model\Art\Reserve;
 use App\Model\Art;
+use Carbon\Carbon;
 use Auth;
+use Log;
+use DB;
 
 class ArtUtility extends Controller
 {
@@ -49,5 +53,39 @@ class ArtUtility extends Controller
         // }
 
         return redirect()->back();
+    }
+
+    public function reserve(Art $art)
+    {
+        try {
+
+            DB::beginTransaction();
+
+            $art->update([
+                'reserve'   => true
+            ]);
+
+            Reserve::create([
+                'art_id'    => $art->id,
+                'user_id'   => Auth::user()->id,
+                'validity'  => Carbon::now()->format('Y-m-d H:i:s'),
+            ]);
+
+            DB::commit();
+
+            flash('Item reserve successfully')->success();
+
+            return redirect()->back();
+
+        } catch (Exception $e) {
+
+            Log::error($e);
+            DB::rollback();
+
+            flash('Item reserve failed!')->error();
+
+            return redirect()->back();
+        }
+
     }
 }

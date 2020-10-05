@@ -63,4 +63,9 @@ class Art extends Model
     {
         return $this->hasMany('App\Model\Art\Watch');
     }
+
+    public function reserve()
+    {
+        return $this->hasOne('App\Model\Art\Reserve');
+    }
 }

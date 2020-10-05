@@ -73,6 +73,7 @@ Route::group(['middleware' => ['role_or_permission:Super-admin|read util|create 
 
 Route::patch('art/status/{art}', 'ArtUtility@status');
 Route::get('art/watch/{id}', 'ArtUtility@watch')->name('art.watch');
+Route::get('art/reserve/{art}', 'ArtUtility@reserve')->name('art.reserve');
 
 // Route::group(['middleware' => ['role_or_permission:Super-admin|read art|create art|delete art|update art']], function () {
 
