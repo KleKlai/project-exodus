@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Services\FileUpload as Upload;
 use App\Http\Requests\ArtStoreRequest;
 use App\Model\Art\Status;
+use App\Model\Art\Watch;
 use Log;
 use DB;
 use Auth;

@@ -50,8 +50,17 @@ class Art extends Model
         return 'uuid';
     }
 
+    protected $casts = [
+        'tag' => 'array'
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function watch()
+    {
+        return $this->hasMany('App\Model\Art\Watch');
     }
 }

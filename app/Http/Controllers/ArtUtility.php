@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Services\NotificationService as Notify;
 use Illuminate\Http\Request;
+use App\Model\Art\Watch;
 use App\Model\Art;
+use Auth;
 
 class ArtUtility extends Controller
 {
@@ -30,6 +32,21 @@ class ArtUtility extends Controller
 
         //Notify Artist for this art
         Notify::User($art->user_id, 'System', 'Your artwork has been approved.');
+
+        return redirect()->back();
+    }
+
+    public function watch($id)
+    {
+        $watch = Watch::where('art_id', $id)->get();
+        dd($watch);
+        // if($watch->isEmpty())
+        // {
+            Watch::create([
+                'art_id'    => $id,
+                'user_id'   => Auth::user()->id
+            ]);
+        // }
 
         return redirect()->back();
     }

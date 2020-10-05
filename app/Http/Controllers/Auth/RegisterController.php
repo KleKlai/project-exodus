@@ -81,7 +81,7 @@ class RegisterController extends Controller
         ]);
 
         //Assign artist
-        $user->assignRole('Artist');
+        $user->assignRole('Standard');
 
         return $user;
     }

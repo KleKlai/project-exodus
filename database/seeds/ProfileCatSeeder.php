@@ -101,5 +101,18 @@ class ProfileCatSeeder extends Seeder
             'category'      => 'Gallery',
             'subcategory'          => 'TINTA Artists Iligan',
         ]);
+
+        Type::create([
+            'category'      => 'Special Project',
+        ]);
+
+        Type::create([
+            'category'      => 'Featured Artist',
+        ]);
+
+        Type::create([
+            'category'      => 'Regional Group',
+            'subcategory'   => 'North Cotabato',
+        ]);
     }
 }

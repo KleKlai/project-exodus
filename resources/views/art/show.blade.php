@@ -16,28 +16,36 @@
                 <div class="card-header">
                     Details
 
+                    @canany(['update art', 'update art-status', 'delete art'])
                     <div class="dropdown float-right">
                         <a href="javascript:void();" class="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-ellipsis-v"></i>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="javascript();" data-toggle="modal" data-target="#updateArtModal">Update</a>
-                            <a class="dropdown-item" href="{{ route('art.edit', $art) }}">Edit</a>
-                            <a class="dropdown-item" href="javascript();" data-toggle="modal" data-target="#deleteArtModal">Delete</a>
+                            @can('update art-status')
+                                <a class="dropdown-item" href="javascript();" data-toggle="modal" data-target="#updateArtModal">Update</a>
+                            @endcan
+                            @can('update art')
+                                <a class="dropdown-item" href="{{ route('art.edit', $art) }}">Edit</a>
+                            @endcan
+                            @can('delete art')
+                                <a class="dropdown-item" href="javascript();" data-toggle="modal" data-target="#deleteArtModal">Delete</a>
+                            @endcan
                         </div>
                     </div>
+                    @endcan
                 </div>
                 <div class="card-body">
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label class="text-muted"for="name">Artist:</label>
-                            <a href="#RedirecToUserDetails">
+                            <a href="{{ route('user.show', $art->user->uuid) }}">
                                 <input type="text" class="form-control-plaintext" value="{{ $art->user->name }}" readonly>
                             </a>
                         </div>
                         <div class="form-group col-md-8">
-                             <label class="text-muted" for="name">Name:</label>
+                             <label class="text-muted" for="name">Title:</label>
                             <input type="text" class="form-control-plaintext" value="{{ $art->name }}" readonly>
                         </div>
                     </div>
@@ -115,6 +123,15 @@
                         <p class="badge badge-success">{{ $art->tag }}</p>
                     </div>
                 </div>
+                <div class="card-footer">
+                    <a href="#" class="btn btn-danger">
+                        <i class="fa fa-heart"></i>
+                    </a>
+
+                    <a href="{{ route('art.watch', $art->id) }}" class="btn btn-success">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </div>
             </div>
 
             <div class="card mt-2 {{ ($art->status == 'Pending') ? 'd-none' : '' }}" >
@@ -123,6 +140,7 @@
                     {{ $art->remark ?? 'No Remarks'}}
                 </div>
             </div>
+
 
             @if (!empty($art->remarks))
                 <div class="card mt-2">

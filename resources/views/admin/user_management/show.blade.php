@@ -89,7 +89,7 @@
 
             <div class="card">
                 <div class="card-header">
-                    Artwork
+                    Artwork ({{ $art->count() }})
                 </div>
                 <div class="card-body">
                     @if(empty($art->count()))
