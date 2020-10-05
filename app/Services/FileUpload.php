@@ -17,4 +17,15 @@ class FileUpload {
 
         return $file_name;
     }
+
+    static function TicketFile(Request $request)
+    {
+
+        $file_extention = $request['attachment']->getClientOriginalExtension();
+        // File Name Structure: TimeUploaded_UserWhoUpload.FileExtension
+        $file_name = time().rand(99,999).'_'.\Auth::user()->name.'.'.$file_extention;
+        $file_path = $request['attachment']->storeAs('public/ticket', $file_name);
+
+        return $file_name;
+    }
 }

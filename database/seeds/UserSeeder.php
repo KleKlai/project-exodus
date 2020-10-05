@@ -59,18 +59,29 @@ class UserSeeder extends Seeder
             'password'      =>   Hash::make('bxtr1605'),
         ]);
 
+        $Standard = User::create([
+            'name'          =>  'John Down',
+            'mobile'        =>  '09952247045',
+            'category'      =>  'N/A',
+            'email'         =>  'maynard@min-art.org',
+            'email_verified_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            'password'      =>   Hash::make('bxtr1605'),
+        ]);
+
         //Fetch all Roles
 
         $Super_Role     = Role::where('name', 'Super-admin')->get();
         $Admin_Role     = Role::where('name', 'Admin')->get();
         $Curator_Role   = Role::where('name', 'Curator')->get();
         $Artist_Role    = Role::where('name', 'Artist')->get();
+        $Standard_Role  = Role::where('name', 'Standard')->get();
 
         $Super_admin->assignRole($Super_Role);
         $Admin->assignRole($Admin_Role);
         $Curator->assignRole($Curator_Role);
         $Artist->assignRole($Artist_Role);
         $Maynard->assignRole($Artist_Role);
+        $Standard->assignRole($Standard_Role)
 
     }
 }

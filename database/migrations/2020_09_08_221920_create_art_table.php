@@ -34,6 +34,7 @@ class CreateArtTable extends Migration
             $table->string('attachment')->nullable();
             $table->string('status');
             $table->string('remark')->nullable();
+            $table->string('tag')->default('Digital');
             $table->softDeletes();
             $table->timestamps();
         });

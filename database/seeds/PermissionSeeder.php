@@ -51,7 +51,7 @@ class PermissionSeeder extends Seeder
 
         //TODO: Support Ticket
         $ticket = [
-            'edit ticket', 'update ticket', 'update ticket-status', 'archive ticket', 'delete ticket'
+            'update ticket', 'update status ticket', 'archive ticket', 'delete ticket', 'save note ticket'
         ];
 
         foreach($ticket as $ticket){
@@ -63,6 +63,7 @@ class PermissionSeeder extends Seeder
         $admin          = Role::create(['name' => 'Admin']);
         $curator        = Role::create(['name' => 'Curator']);
         $artist         = Role::create(['name' => 'Artist']);
+        $standard       = Role::create(['name' => 'Standard']);
 
         /**
          * Assigning Role
@@ -85,7 +86,7 @@ class PermissionSeeder extends Seeder
         $admin->givePermissionTo('read syslog');
 
         //TODO: Admin Support Ticket
-        $admin->givePermissionTo('edit ticket', 'update ticket', 'update ticket-status', 'archive ticket', 'delete ticket');
+        $admin->givePermissionTo('update ticket', 'update status ticket', 'archive ticket', 'delete ticket', 'save note ticket');
         /**
          * Curator
          */

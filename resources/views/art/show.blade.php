@@ -109,6 +109,11 @@
                         <label class="text-muted" for="description">Description:</span></label>
                         <p>{{ $art->description }}</p>
                     </div>
+
+                    <div class="form-group">
+                        <label class="text-muted" for="Tag">Tag:</label>
+                        <p class="badge badge-success">{{ $art->tag }}</p>
+                    </div>
                 </div>
             </div>
 

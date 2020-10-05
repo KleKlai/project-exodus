@@ -10,6 +10,17 @@ use Auth;
 
 class ComponentController extends Controller
 {
+    public function __construct()
+    {
+        // $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'update','delete']]);
+
+        $this->middleware('permission:save note ticket', ['only' => ['saveNotes']]);
+
+        $this->middleware('permission:archive ticket', ['only' => ['archive']]);
+
+        $this->middleware('permission:update status ticket', ['only' => ['status']]);
+    }
+
     public function saveNotes(Request $request, Ticket $ticket)
     {
         if($ticket->archive){

@@ -24,6 +24,7 @@
 </head>
 <body>
     <div id="app">
+
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -67,6 +68,9 @@
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ route('ticket.index') }}">Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('ticket.index') }}">Site Settings</a>
                         </li>
                         </ul>
                     </div>

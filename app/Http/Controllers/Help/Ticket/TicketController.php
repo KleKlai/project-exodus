@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Help\Ticket;
 
 use App\Http\Requests\CreateTicketRequest;
+use App\Services\FileUpload as Upload;
 use App\Http\Controllers\Controller;
 use App\Model\Support\Conversation;
 use App\Model\Support\Ticket;
@@ -20,6 +21,7 @@ class TicketController extends Controller
         $this->middleware('permission:update ticket', ['only' => ['edit', 'update']]);
 
         $this->middleware('permission:delete ticket', ['only' => ['destroy']]);
+
     }
 
     public function index()
@@ -54,18 +56,24 @@ class TicketController extends Controller
      */
     public function store(CreateTicketRequest $request)
     {
+
+        //If there is a file store them in the public/storage/ticket
+        if($request->hasFile('attachment'))
+        {
+            $file_name = Upload::TicketFile($request);
+            $request->merge(['file' => $file_name]);
+        }
+
         $ticket = Ticket::create([
             'user_id'       => Auth::user()->id,
             'status'        => 'Open',
             'email'         => $request->email,
             'subject'       => $request->subject,
             'description'   => $request->description,
-            'attachment'    => $request->attachment,
+            'attachment'    => $request->file,
         ]);
 
-        $message = 'Thank you for reaching us.
-
-        We would like to acknowledge receipt of your concern and a reference number has been created a support representative will be reviewing your request and will send you a personal response.';
+        $message = config('custom.ticket.auto_reply');
 
         Conversation::create([
             'ticket_id' => $ticket->id,
