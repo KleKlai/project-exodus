@@ -8,22 +8,18 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
-        
+
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ asset('/images/nav.ico') }}">
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
 
-        <!-- Fonts -->
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700,800,900&display=swap" rel="stylesheet">
-
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
-        <style>
+        {{--  <style>
             * {
                 font-family: 'Montserrat';
             }
@@ -117,10 +113,10 @@
                     font-size: 20px;
                 }
             }
-        </style>
+        </style>  --}}
     </head>
     <body>
-        <div>
+        {{--  <div>
             <div id="pattern">
                     <img src="/images/spattern.png" alt="">
             </div>
@@ -180,7 +176,7 @@
                         birthday = "Oct 21, 2020 08:00:00";
 
                 let countDown = new Date(birthday).getTime(),
-                    x = setInterval(function() {    
+                    x = setInterval(function() {
 
                         let now = new Date().getTime(),
                             distance = countDown - now;
@@ -205,6 +201,81 @@
                         //seconds
                     }, 0)
                 }());
-        </script>
+        </script>  --}}
+
+
+        <div class="container-fluid cover-picture background-image" style="background-image: url('/images/galleries/thebauhaus.png')">
+            <div class="nav-container">
+                <div class="topnav">
+                  <a href="#home">Home</a>
+                  <a href="#news">News</a>
+                  <a href="#contact">Contact</a>
+                  <a href="#about">About</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="header-container">
+                <div class="row">
+                    <div class="col header-link">
+                        <p>ARTWORKS</p>
+                    </div>
+                    <div class="col header-link">
+                        <p>ARTISTS</p>
+                    </div>
+                    <div class="col header-link">
+                        <p>GALLERIES</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title mt-5">FEATURED ARTWORKS</div>
+            <div class="row">
+                <div class="col picture-container background-image mr-2" style="background-image: url('/images/galleries/thebauhaus.png');">
+                    <p class="picture-title">THEBAUHAUS</p>
+                </div>
+                <div class="col picture-container"></div>
+                <div class="col picture-container ml-2"></div>
+            </div>
+
+            <div class="title">FEATURED ARTISTS</div>
+            <div class="row">
+                <div class="col picture-container background-image mr-2" style="background-image: url('/images/galleries/thebauhaus.png');">
+                    THEBAUHAUS
+                </div>
+                <div class="col picture-container"></div>
+                <div class="col picture-container ml-2"></div>
+            </div>
+
+            <div class="title">FEATURED GALLERIES</div>
+            <div class="row">
+                <div class="col picture-container background-image mr-2" style="background-image: url('/images/galleries/thebauhaus.png');">
+                    THEBAUHAUS
+                </div>
+                <div class="col picture-container"></div>
+                <div class="col picture-container ml-2"></div>
+            </div>
+
+            <div class="title">NEWS</div>
+            <div class="row">
+                <div class="col picture-container background-image mr-2" style="background-image: url('/images/galleries/thebauhaus.png');">
+                    THEBAUHAUS
+                </div>
+                <div class="col picture-container"></div>
+            </div>
+
+            <div class="title">EVENTS</div>
+            <div class="row">
+                <div class="col picture-container background-image mr-2" style="background-image: url('/images/galleries/thebauhaus.png');">
+                    THEBAUHAUS
+                </div>
+                <div class="col picture-container"></div>
+            </div>
+
+
+        </div>
+
+
     </body>
 </html>

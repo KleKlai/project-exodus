@@ -10,7 +10,7 @@
 
     @include('services.register_component')
 
-    <table id="myTable" class="table mt-3">
+    <table class="table mt-3">
         <thead>
             <tr>
                 <th scope="col">#</th>

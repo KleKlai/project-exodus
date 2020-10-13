@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <a href="{{ route('art.create') }}" class="btn btn-link">
         + Artworks
     </a>
 
-    <table class="table table-hover text-center">
+    <table id="myTable" class="table table-hover text-center">
         <thead>
             <tr>
                 <th scope="col">Name</th>

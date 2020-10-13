@@ -4,19 +4,19 @@
 
 <div class="container">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#galleryRegister">
-        + Gallery
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#style">
+        + Style
     </button>
 
-    @include('services.register_component')
+    @include('services.art_component_modal')
 
-    <table id="myTable" class="table mt-3">
+    <table class="table mt-3">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Label</th>
                 <th scope="col">Description</th>
-                <th scope="col">Action</th>
+                <th scope="col">Style</th>
             </tr>
         </thead>
         <tbody>
@@ -24,9 +24,9 @@
                 <tr>
                     <th scope="row">{{ $key+1 }}</th>
                     <td>{{ $data->name }}</td>
-                    <td>{{ Str::limit($data->description ?? '-', 60, '...') }}</td>
+                    <td>{{ $data->description ?? '-' }}</td>
                     <td>
-                        <form action="{{ route('register.gallery.destroy', $data) }}" method="post">
+                        <form action="{{ route('art.style.destroy', $data) }}" method="post">
                             @csrf
                             @method('DELETE')
 

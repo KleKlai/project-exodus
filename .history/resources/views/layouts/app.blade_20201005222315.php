@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('/images/nav.ico') }}">
 
@@ -22,7 +22,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
     <!-- Datatables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
@@ -392,7 +391,7 @@
 
             @yield('content')
 
-
+            
             <div class="container footer">
                 <p>Copyright 2020. Mindanao Art</p>
             </div>

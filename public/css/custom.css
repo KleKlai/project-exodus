@@ -1,0 +1,88 @@
+.background-image {
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.cover-picture {
+    height: 700px;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.nav-container {
+    position: absolute;
+    margin-top: 20px;
+    width: 100vw;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Navbar links */
+.topnav a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+.topnav a:hover {
+    text-decoration: underline;
+    color: #c48935;
+}
+
+
+.picture-container {
+    /* background-color: gray; */
+    height: 200px;
+    background-color: rgba(0,0,0,0.25);
+}
+
+
+.picture-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #c48935;
+    padding: 5rem;
+}
+
+.header-container {
+    position: absolute;
+    margin-top: -100px;
+}
+
+.header-link {
+    background-color: #c48935;
+    height: 100px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem;
+}
+
+.header-link:hover {
+    border: solid black 5px;
+    /* transform: scaleX(1.1); */
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+
+
