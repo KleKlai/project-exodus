@@ -29,11 +29,23 @@ class TicketController extends Controller
         if(Auth::user()->hasAnyRole('Super-admin', 'Admin'))
         {
             $data = Ticket::orderBy('created_at', 'DESC')->get();
+
+            $resolve    = Ticket::where('status', 'Closed')->count();
+            $unresolve  = Ticket::where('status', 'Open')->count();
+
+            return view('help.ticket.index', compact(
+                'data',
+                'resolve',
+                'unresolve'
+            ));
+
         } else {
             $data = Ticket::orderBy('created_at', 'DESC')->where('user_id', Auth::user()->id)->get();
-        }
 
-        return view('help.ticket.index', compact('data'));
+            return view('help.ticket.index', compact(
+                'data',
+            ));
+        }
     }
 
     /**

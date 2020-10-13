@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\User;
+use App\Model\Art;
 
 class HomeController extends Controller
 {
@@ -28,9 +29,14 @@ class HomeController extends Controller
     public function index()
     {
 
-        // return User::role('Admin')->get();
-        // return \Auth::user()->getAllPermissions();
+        $user       = User::all()->count();
+        $artwork    = Art::all()->count();
 
-        return view('home');
+        // dd(Art::with('user')->get());
+
+        return view('home', compact(
+            'user',
+            'artwork'
+        ));
     }
 }

@@ -51,8 +51,16 @@ class PermissionSeeder extends Seeder
 
         //TODO: Support Ticket
         $ticket = [
-            'update ticket', 'update status ticket', 'archive ticket', 'delete ticket', 'save note ticket'
+            'update ticket', 'update status ticket', 'archive ticket', 'delete ticket', 'save note ticket', 'read ticket statistic'
         ];
+
+        $utilities = [
+            'read site statistics'
+        ];
+
+        foreach($utilities as $utilities) {
+            Permission::create(['name' => $utilities]);
+        }
 
         foreach($ticket as $ticket){
             Permission::create(['name' => $ticket]);
@@ -86,7 +94,10 @@ class PermissionSeeder extends Seeder
         $admin->givePermissionTo('read syslog');
 
         //TODO: Admin Support Ticket
-        $admin->givePermissionTo('update ticket', 'update status ticket', 'archive ticket', 'delete ticket', 'save note ticket');
+        $admin->givePermissionTo('update ticket', 'update status ticket', 'archive ticket', 'delete ticket', 'save note ticket', 'read ticket statistic');
+
+        //TODO: General Utilities
+        $admin->givePermissionTo('read site statistics');
         /**
          * Curator
          */
