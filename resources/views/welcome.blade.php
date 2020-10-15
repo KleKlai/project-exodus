@@ -19,6 +19,10 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
+        {{-- Font --}}
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+
         {{--  <style>
             * {
                 font-family: 'Montserrat';
@@ -203,76 +207,176 @@
                 }());
         </script>  --}}
 
-
+        {{-- Navigation --}}
         <div class="container-fluid cover-picture background-image" style="background-image: url('/images/galleries/thebauhaus.png')">
             <div class="nav-container">
                 <div class="topnav">
-                  <a href="#home">Home</a>
-                  <a href="#news">News</a>
-                  <a href="#contact">Contact</a>
-                  <a href="#about">About</a>
+                    <a href="" class="mr-5">
+                        <img src="{{ asset('images/logo/logo.png') }}" alt="" height="30px">
+                    </a>
+                  <a href="/">Artworks</a>
+                  <a href="#news">Artists</a>
+                  <a href="#contact">Galleries</a>
                 </div>
             </div>
         </div>
 
+
+        {{-- Content --}}
         <div class="container">
-            <div class="header-container">
+
+            <div>
                 <div class="row">
-                    <div class="col header-link">
+                    <div class="col-md header-link">
                         <p>ARTWORKS</p>
                     </div>
-                    <div class="col header-link">
+                    <div class="col-md header-link">
                         <p>ARTISTS</p>
                     </div>
-                    <div class="col header-link">
+                    <div class="col-md header-link">
                         <p>GALLERIES</p>
                     </div>
                 </div>
             </div>
 
-            <div class="title mt-5">FEATURED ARTWORKS</div>
+            <div class="h-divider">
+
+            <div class="title">FEATURED ARTWORKS</div>
             <div class="row">
-                <div class="col picture-container background-image mr-2" style="background-image: url('/images/galleries/thebauhaus.png');">
-                    <p class="picture-title">THEBAUHAUS</p>
+                <div class="col-md">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-53.jpg');"></div>
+                        <p class="picture-title">ARTWORK TITLE HERE</p>
+                    </a>
                 </div>
-                <div class="col picture-container"></div>
-                <div class="col picture-container ml-2"></div>
+                <div class="col-md">
+                    <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-54.jpg');"></div>
+                    <p class="picture-title">THIS IS A VERY LONG ARTWORK TITLE HERE</p>
+                </div>
+                <div class="col-md">
+                    <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-55.jpg');"></div>
+                    <p class="picture-title">ARTWORK TITLE HERE</p>
+                </div>
             </div>
+            <div class="container" style="text-align: center;">
+                <button type="button" class="btn btn-link">View All</button>
+            </div>
+
+
+            <div class="h-divider">
 
             <div class="title">FEATURED ARTISTS</div>
             <div class="row">
-                <div class="col picture-container background-image mr-2" style="background-image: url('/images/galleries/thebauhaus.png');">
-                    THEBAUHAUS
+                <div class="col-md">
+                    <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-53.jpg');"></div>
+                    <p class="picture-title">ARTIST NAME</p>
+                    <p>Gallery assigned, museum assigned.</p>
                 </div>
-                <div class="col picture-container"></div>
-                <div class="col picture-container ml-2"></div>
+                <div class="col-md">
+                    <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-54.jpg');"></div>
+                    <p class="picture-title">ARTIST NAME</p>
+                    <p>Gallery assigned, museum assigned.</p>
+                </div>
+                <div class="col-md">
+                    <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-55.jpg');"></div>
+                    <p class="picture-title">ARTIST NAME</p>
+                    <p>Gallery assigned, museum assigned.</p>
+                </div>
             </div>
+            <div class="container" style="text-align: center;">
+                <button type="button" class="btn btn-link">View All</button>
+            </div>
+
+            <div class="h-divider">
 
             <div class="title">FEATURED GALLERIES</div>
             <div class="row">
-                <div class="col picture-container background-image mr-2" style="background-image: url('/images/galleries/thebauhaus.png');">
-                    THEBAUHAUS
+                <div class="col-md">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                    </div>
+                    <p class="picture-title">GALLERY NAME</p>
+                    <p>Gallery description will be put here.</p>
                 </div>
-                <div class="col picture-container"></div>
-                <div class="col picture-container ml-2"></div>
+                <div class="col-md">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                    </div>
+                    <p class="picture-title">GALLERY NAME</p>
+                    <p>Gallery description will be put here.</p>
+                </div>
+                <div class="col-md">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                    </div>
+                    <p class="picture-title">GALLERY NAME</p>
+                    <p>Gallery description will be put here.</p>
+                </div>
+            </div>
+            <div class="container" style="text-align: center;">
+                <button type="button" class="btn btn-link">View All</button>
             </div>
 
-            <div class="title">NEWS</div>
+            <div class="h-divider">
+
+            <div class="title">VISIT MINDANAO MUSEUMS</div>
             <div class="row">
-                <div class="col picture-container background-image mr-2" style="background-image: url('/images/galleries/thebauhaus.png');">
-                    THEBAUHAUS
+                <div class="col-4 mb-4">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                        <p class="picture-inner-title">THEBAUHAUS</p>
+                    </div>
                 </div>
-                <div class="col picture-container"></div>
+                <div class="col-4 mb-4">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                        <p class="picture-inner-title">THEBAUHAUS</p>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                        <p class="picture-inner-title">THEBAUHAUS</p>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                        <p class="picture-inner-title">THEBAUHAUS</p>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                        <p class="picture-inner-title">THEBAUHAUS</p>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                        <p class="picture-inner-title">THEBAUHAUS</p>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                        <p class="picture-inner-title">THEBAUHAUS</p>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                        <p class="picture-inner-title">THEBAUHAUS</p>
+                    </div>
+                </div>
+                <div class="col-4 mb-4">
+                    <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                        <p class="picture-inner-title">THEBAUHAUS</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="title">EVENTS</div>
-            <div class="row">
-                <div class="col picture-container background-image mr-2" style="background-image: url('/images/galleries/thebauhaus.png');">
-                    THEBAUHAUS
-                </div>
-                <div class="col picture-container"></div>
-            </div>
+            <div class="newsletter">
+                <div class="container row">
+                    <div class="col-8">
+                        <span class="text">Get the latest art stories and collections by simply 'Subscribe'</span>
 
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-outline-dark" style="float: right;">Subcribe</button>
+
+                    </div>
+                </div>
+            </div>
 
         </div>
 

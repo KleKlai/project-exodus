@@ -166,7 +166,7 @@
 @endsection
 
 @section('script')
-<script>
+<!-- <script>
     function showOtherDropDown(){
         var x = document.getElementById("category").value;
         if(x == "Gallery"){
@@ -193,5 +193,5 @@
             document.getElementById("special").classList.add('d-none');
         }
     }
-</script>
+</script> -->
 @endsection

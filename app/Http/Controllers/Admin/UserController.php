@@ -15,15 +15,19 @@ use App\User;
 use Auth;
 
 //Register Component
-use App\Model\Register\Gallery;
-use App\Model\Register\Regional;
-use App\Model\Register\Special;
+use App\Model\Profile\Type;
 
 class UserController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
+
+        $this->middleware('permission:read user', ['only' => ['index', 'show']]);
+
+        $this->middleware('permission:update user', ['only' => ['edit', 'update']]);
+
+        $this->middleware('permission:delete user', ['only' => ['destroy']]);
     }
 
     public function index()
@@ -34,27 +38,6 @@ class UserController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        dd($request);
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  \App\User  $user
@@ -62,6 +45,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+
         //Get all user art
         $art = Art::where('user_id', $user->id)->with('user')->select('uuid', 'name')->get();
 
@@ -91,17 +75,16 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $roles      = Role::select('name')->get();
-        $gallery    = Gallery::select('name')->get();
-        $regional   = Regional::select('name')->get();
-        $special    = Special::select('name')->get();
+
+        $permission = (!empty($user->verified)) ? Permission::select('name')->get() : [] ;
+        $category   = Type::select('category', 'subcategory')->get();
 
         return view('admin.user_management.edit', compact(
             [
                 'user',
                 'roles',
-                'gallery',
-                'regional',
-                'special'
+                'permission',
+                'category',
             ]
         ));
     }
@@ -140,7 +123,13 @@ class UserController extends Controller
             'bio'           => $request->bio,
         ]);
 
-        $user->assignRole($request->roles);
+        //Detach all user roles first
+        $user->roles()->detach();
+
+        //Assign new roles
+        $user->syncRoles($request->roles);
+
+        flash('Save')->success();
 
         return back();
     }

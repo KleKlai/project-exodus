@@ -25,13 +25,16 @@ class CreateArtTable extends Migration
             $table->string('style');
             $table->string('medium');
             $table->string('material');
-            $table->string('size');
+            $table->string('size')->nullable();
             $table->string('height');
             $table->string('width');
             $table->string('depth')->nullable();
             $table->string('price');
             $table->longText('description');
-            $table->string('attachment');
+            $table->string('attachment')->nullable();
+            $table->string('tag')->default('Digital');
+            $table->integer('favorite')->nullable();
+            $table->boolean('reserve')->nullable();
             $table->string('status');
             $table->string('remark')->nullable();
             $table->softDeletes();

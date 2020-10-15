@@ -5,6 +5,7 @@ namespace App\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\Model;
 use Webpatser\Uuid\Uuid;
+use Auth;
 
 class FAQs extends Model
 {

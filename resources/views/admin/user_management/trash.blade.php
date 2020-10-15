@@ -9,7 +9,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Category</th>
-                <th scope="col">Role</th>
+                <th scope="col">Deleted</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -20,13 +20,22 @@
                         <td>{{ $key+1 }}</td>
                         <td>{{ $data->name }}</td>
                         <td>{{ $data->category }}</td>
-                        <td>
-                            @foreach($data->getRoleNames() as $role)
-                                <span class="badge badge-success">{{ strtoupper($role) }}</span>
-                            @endforeach
+                        <td data-toggle="tooltip" data-placement="top" title="{{ $data->deleted_at }}">
+                            {{ $data->deleted_at->diffForHumans() }}
                         </td>
                         <td>
-                            <a href="{{ route('user.show', $data) }}"> <i class="fa fa-id-card-o"></i> </a>
+                            <button form="restore" class="btn btn-link"> <i class="fa fa-undo"></i> Restore</button>
+                            <form id="restore" action="{{ route('user.restore', $data->id) }}" method="POST" class="d-none">
+                                @csrf
+                                @method('PATCH')
+                            </form>
+
+                            <button class="btn btn-outline-danger" form="force-delete"> <i class="fa fa-trash-o"></i> Purge</button>
+
+                            <form id="force-delete" action="{{ route('user.force.delete', $data->id) }}" method="POST" class="d-none">
+                                @csrf
+                                @method('DELETE')
+                            </form>
                         </td>
                     </tr>
                 @empty

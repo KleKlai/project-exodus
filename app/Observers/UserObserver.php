@@ -25,7 +25,10 @@ class UserObserver
      */
     public function updated(User $user)
     {
-        //
+        // TODO: Log the process
+        activity('Art')
+            ->causedBy($user->id)
+            ->log('Successfully update user');
     }
 
     /**
@@ -39,7 +42,7 @@ class UserObserver
         // TODO: Log the process
         activity('Art')
             ->causedBy($user->id)
-            ->log('');
+            ->log('User deleted');
     }
 
     /**
@@ -50,7 +53,10 @@ class UserObserver
      */
     public function restored(User $user)
     {
-        //
+        // TODO: Log the process
+        activity('Art')
+            ->causedBy($user->id)
+            ->log('User restored');
     }
 
     /**
@@ -61,6 +67,9 @@ class UserObserver
      */
     public function forceDeleted(User $user)
     {
-        //
+        // TODO: Log the process
+        activity('Art')
+            ->causedBy($user->id)
+            ->log('User permanently deleted');
     }
 }

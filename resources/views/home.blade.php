@@ -2,7 +2,38 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+
+    <div class="row mt-2">
+        <div class="col-2">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="font-weight-bold">{{ "User's" }}</h6>
+                    <p class="card-text">{{ $user }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="font-weight-bold">Artwork</h6>
+                    <p class="card-text">{{ $artwork }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <div class="card">
+                <div class="card-body">
+                    <h6 class="font-weight-bold">Ticket</h6>
+                    <p class="card-text">560</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row justify-content-center mt-2">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
@@ -23,32 +54,10 @@
 
             </div>
 
-            <div class="card mt-4">
-                <div class="card-body text-center">
-                    <h2>Exciting things to come...</h2>
-
-                    <p>
-                        {{ "Mindanao Art is constantly improving. Give me your email and
-                        I'll send you updates about the event and info on upcoming art gallery." }}
-                    </p>
-
-                    <form action="{{ url('newsletter') }}" method="post">
-                        @csrf
-
-                        <div class="form-row p-3">
-                            <div class="col-10">
-                              <input type="email" class="form-control" name="email" placeholder="You're email address">
-                            </div>
-                            <div class="col">
-                              <button type="submit" class="btn btn-success">Subscribe</button>
-                            </div>
-                        </div>
-                        <small>{{ "I won't send you spam. Only golden nugglets from my brain. Unsubscribe at any time." }}</small>
-                    </form>
-                </div>
-            </div>
+            @include('services.newsletter')
         </div>
     </div>
+
 </div>
 
 @endsection

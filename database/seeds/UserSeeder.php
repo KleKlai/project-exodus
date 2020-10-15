@@ -65,6 +65,7 @@ class UserSeeder extends Seeder
         $Admin_Role     = Role::where('name', 'Admin')->get();
         $Curator_Role   = Role::where('name', 'Curator')->get();
         $Artist_Role    = Role::where('name', 'Artist')->get();
+        $Standard_Role  = Role::where('name', 'Standard')->get();
 
         $Super_admin->assignRole($Super_Role);
         $Admin->assignRole($Admin_Role);

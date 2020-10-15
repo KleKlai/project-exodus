@@ -10,16 +10,6 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware(
-            [
-                'role_or_permission:Super-admin|read util|create util|delete util'
-            ]
-        );
-    }
-
     public function index()
     {
         $data = Category::all();

@@ -9,20 +9,6 @@ use Illuminate\Http\Request;
 
 class StyleController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware(
-            [
-                'role_or_permission:Super-admin|read util|create util|delete util'
-            ]
-        );
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $data = Style::all();

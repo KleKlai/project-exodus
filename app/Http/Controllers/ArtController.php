@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Services\FileUpload as Upload;
 use App\Http\Requests\ArtStoreRequest;
 use App\Model\Art\Status;
+use App\Model\Art\Watch;
 use Log;
 use DB;
 use Auth;
@@ -28,7 +29,13 @@ class ArtController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['only' => ['create', 'store', 'edit', 'update','delete']]);
+
+        $this->middleware('permission:create art', ['only' => ['create', 'store']]);
+
+        $this->middleware('permission:update art', ['only' => ['edit', 'update']]);
+
+        $this->middleware('permission:delete art', ['only' => ['destroy']]);
     }
 
     /**
@@ -82,9 +89,12 @@ class ArtController extends Controller
 
             DB::beginTransaction();
 
-            $file_name = Upload::ArtUploadFile($request);
+            if($request->hasFile('file'))
+            {
+                $file_name = Upload::ArtUploadFile($request);
+                $request->merge(['attachment' => $file_name]);
+            }
 
-            $request->merge(['attachment' => $file_name]);
             $request->request->add(['user_id' => \Auth::user()->id]);
             $request->request->add(['status' => 'Pending']);
 
@@ -101,7 +111,7 @@ class ArtController extends Controller
 
             flash("Whoops! something bad happen. Don't worry its not your fault.")->error();
 
-            Log::error($ex);
+            Log::error($e);
             DB::rollback();
 
             return redirect()->back();
@@ -117,7 +127,9 @@ class ArtController extends Controller
      */
     public function show(Art $art)
     {
-        Log::info(Auth::user()->name . ' open ' . $art->name . ' ' .$art->category);
+        if(Auth::check()){ // If there is authenticated user log it
+            Log::info(Auth::user()->name . ' open ' . $art->name . ' ' .$art->category);
+        }
 
         $status = Status::all('name');
 

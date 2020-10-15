@@ -21,9 +21,22 @@
 </div>
 <div class="container">
 
-    <a href="{{ route('FAQs.create') }}" class="btn btn-link">
+    <a href="{{ route('faqs.create') }}" class="btn btn-link">
         + FAQs
     </a>
+
+    @forelse($data as $faqs)
+        <a href="{{ route('faqs.show', $faqs) }}" class="text-undecorated">
+            <div class="card mb-2">
+                <div class="card-header">
+                    {{ $faqs }}
+                    <span class="float-right"><i class="fa fa-plus"></i></span>
+                </div>
+            </div>
+        </a>
+    @empty
+
+    @endforelse
 
 </div>
 @endsection

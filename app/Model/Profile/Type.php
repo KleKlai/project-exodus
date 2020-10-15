@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Model\Register;
+namespace App\Model\Profile;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gallery extends Model
+class Type extends Model
 {
     protected $fillable = [
-        'name', 'description'
+        'category', 'subcategory'
     ];
 }

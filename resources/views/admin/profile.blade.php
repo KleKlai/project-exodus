@@ -7,9 +7,9 @@
         <li class="nav-item">
             <a class="nav-link active" href="javascript:void();">Profile</a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link" href="#">History</a>
-        </li>
+        </li> --}}
     </ul>
 
     <p class="font-weight-bold">Account</p>
@@ -23,12 +23,12 @@
                 <label for="inputPassword4">Full Name</label>
 
                 <div class="input-group mb-2">
-                    @if(!empty($user->email_verified_at))
+                    @if(!empty($user->verified))
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fa fa-check-circle"></i></div>
                         </div>
                     @endif
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" {{ (!empty($user->email_verified_at)) ? 'disabled' : '' }}>
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -54,7 +54,15 @@
                     <div class="input-group-prepend">
                       <div class="input-group-text">+63</div>
                     </div>
-                    <input type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ $user->mobile }}">
+
+                    <input type="text" class="form-control @error('mobile') is-invalid @enderror"
+                        name="mobile"
+                        value="{{ old('mobile', $user->mobile) }}"
+                        required
+                        autofocus
+                        maxlength="10"
+                        minlength="10"
+                    >
 
                     @error('mobile')
                         <span class="invalid-feedback" role="alert">
@@ -65,11 +73,11 @@
             </div>
             <div class="form-group col-md-4">
                 <label for="inputAddress">Category</label>
-                <input type="text" class="form-control" value="{{ $user->category }}" readonly>
+                <input type="text" class="form-control" value="{{ $user->category }}" disabled>
             </div>
             <div class="form-group col-md-4">
                 <label for="inputAddress">Sub-Category</label>
-                <input type="text" class="form-control" value="{{ $user->subcategory ?? 'none' }}" readonly>
+                <input type="text" class="form-control" value="{{ $user->subcategory ?? 'none' }}" disabled>
             </div>
         </div>
         <div class="form-group">

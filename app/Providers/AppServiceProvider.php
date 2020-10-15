@@ -23,6 +23,9 @@ use App\Model\Art\Style;
 use App\Observers\Art\SubjectObserver;
 use App\Model\Art\Subject;
 
+use App\Observers\TicketObserver;
+use App\Model\Support\Ticket;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -53,7 +56,7 @@ class AppServiceProvider extends ServiceProvider
         Style::observe(StyleObserver::class);
         Subject::observe(SubjectObserver::class);
 
-
+        Ticket::observe(TicketObserver::class);
 
     }
 }

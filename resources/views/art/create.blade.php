@@ -6,7 +6,7 @@
         @csrf
 
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Title</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" name="name" required>
 
             @error('name')
@@ -195,7 +195,7 @@
             <div class="form-group col-md-6">
                 <label for="attachment">Upload Artwork Photo</label>
                 <div class="custom-file mb-3">
-                    <input type="file" class="form-control-file @error('file') is-invalid @enderror" name="file" onchange="readURL(this);"  aria-describedby="Product Image" value="{{ old('attachment') }}" required>
+                    <input type="file" class="form-control-file @error('file') is-invalid @enderror" name="file" onchange="readURL(this);"  aria-describedby="Product Image" value="{{ old('attachment') }}">
 
                     @error('file')
                         <span class="invalid-feedback" role="alert">
@@ -205,7 +205,7 @@
                 </div>
 
                 <div class="mt-2">
-                    <a href="/art" class="btn border-none">Cancel</a>
+                    <a href="{{ url()->previous() }}" class="btn border-none">Cancel</a>
                     <button type="submit" class="btn btn-primary">Save</button>
                 </div>
             </div>

@@ -35,9 +35,13 @@ Route::prefix('notification')->name('notification.')->middleware('auth')->group(
 Route::middleware('auth')->group(function() {
 
     Route::resource('user', 'Admin\UserController');
+    Route::post('user/permission/{user}', 'Admin\Partial@overridePermission')->name('override.permission');
+    Route::patch('user/restore/{id}', 'Admin\Partial@restore')->name('user.restore');
+    Route::delete('user/forceDelete/{id}', 'Admin\Partial@forceDelete')->name('user.force.delete');
     Route::get('profile/{user}', 'Admin\ProfileController@myProfile')->name('my.profile');
     Route::patch('profile/{user}', 'Admin\ProfileController@updateUser')->name('profile.update');
     Route::delete('profile/{user}', 'Admin\ProfileController@deleteUser')->name('profile.delete');
+    Route::get('profile/approve/{user}', 'Admin\ProfileController@markVerified')->name('profile.approve');
     Route::patch('password/{user}', 'Auth\ChangePasswordController@change')->name('password.change');
 
     Route::get('trash', 'Admin\Partial@trashUser')->name('user.trash'); // Get All Trash User
@@ -59,23 +63,22 @@ Route::group(['middleware' => ['role_or_permission:Super-admin|read util|create 
 
     });
 
-    //TODO: Register Component
-    Route::namespace('Register')->prefix('component')->name('register.')->group( function() {
-
-        Route::resource('gallery', 'GalleryController');
-        Route::resource('regional', 'RegionalController');
-        Route::resource('special', 'SpecialController');
-
-    });
-
-    Route::patch('art/status/{art}', 'ArtUtility@status');
+    //TODO: Profile Category
+    Route::get('artist/category', 'Admin\Profile\TypeController@index')->name('artist.category.index');
+    Route::post('artist/category/show', 'Admin\Profile\TypeController@store')->name('artist.category.store');
+    Route::delete('artist/category/destroy/{id}', 'Admin\Profile\TypeController@destroy')->name('artist.category.destroy');
 
 });
 
-Route::group(['middleware' => ['role_or_permission:Super-admin|read art|create art|delete art|update art']], function () {
+
+Route::patch('art/status/{art}', 'ArtUtility@status');
+Route::get('art/watch/{id}', 'ArtUtility@watch')->name('art.watch');
+Route::get('art/reserve/{art}', 'ArtUtility@reserve')->name('art.reserve');
+
+// Route::group(['middleware' => ['role_or_permission:Super-admin|read art|create art|delete art|update art']], function () {
 
     Route::resource('art', 'ArtController');
-});
+// });
 
 Route::namespace('Help')->group( function() {
 
@@ -86,8 +89,15 @@ Route::namespace('Help')->group( function() {
     Route::get('contact', 'ContactController@index');
     Route::post('contact', 'ContactController@send');
 
-    Route::resource('FAQs' , 'FAQsController');
+    Route::resource('faqs' , 'FAQsController');
 
 });
 
 Route::post('newsletter', 'NewsletterController@store');
+
+Route::resource('ticket', 'Help\Ticket\TicketController');
+Route::post('ticket/note/{ticket}', 'Help\Ticket\ComponentController@saveNotes')->name('ticket.note');
+Route::post('ticket/archive/{ticket}', 'Help\Ticket\ComponentController@archive')->name('ticket.archive');
+Route::patch('ticket/status/{ticket}', 'Help\Ticket\ComponentController@status')->name('ticket.status');
+
+Route::resource('conversation', 'Help\Ticket\ConversationController');
