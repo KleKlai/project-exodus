@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5 mb-3">
-            <img class="picture mb-1 mx-auto d-block" src="{{ url('storage/artwork/'.$art->attachment) }}" alt="art Picture" style="max-width:400px; max-height: 800px;">
+            <img class="picture mb-1 mx-auto d-block artwork-picture" src="{{ url('storage/artwork/'.$art->attachment) }}" alt="art Picture" style="">
         </div>
         <div class="col">
 
@@ -38,19 +38,20 @@
                 </div>
                 <div class="card-body">
                     <div class="form-row">
-                        <div class="form-group col-md-4">
+                        <div class="form-group col-md-8">
+                             <label class="text-muted" for="name">Artwork Title:</label>
+                             <h2 class="text-justify" style="padding-left: 10px; font-weight: bold;">{{ $art->name }}</h2>
+                            {{-- <input type="text" class="form-control-plaintext" value="{{ $art->name }}" readonly> --}}
+                        {{-- </div>
+                        <div class="form-group col-md-8"> --}}
                             <label class="text-muted"for="name">Artist:</label>
                             <a href="{{ route('user.show', $art->user->uuid) }}">
-                                <input type="text" class="form-control-plaintext" value="{{ $art->user->name }}" readonly>
+                                <h5 class="text-justify" style="padding-left: 10px;">{{ $art->user->name }}</h5>
+                                {{-- <input type="text" class="form-control-plaintext" value="{{ $art->user->name }}" readonly> --}}
                             </a>
                         </div>
-                        <div class="form-group col-md-8">
-                             <label class="text-muted" for="name">Title:</label>
-                            <input type="text" class="form-control-plaintext" value="{{ $art->name }}" readonly>
-                        </div>
                     </div>
-
-                    <div class="form-row">
+                    {{-- <div class="form-row">
                     <div class="form-group col-md-4">
                          <label class="text-muted" for="subject">Subject:</label>
                         <input type="text" class="form-control-plaintext" value="{{ $art->subject }}" readonly>
@@ -65,9 +66,9 @@
                          <label class="text-muted" for="category">Category:</label>
                         <input type="text" class="form-control-plaintext" value="{{ $art->category }}" readonly>
                     </div>
-                    </div>
+                    </div> --}}
 
-                    <div class="form-row">
+                    {{-- <div class="form-row">
                         <div class="form-group col-md-4">
                              <label class="text-muted" for="style">Style:</label>
                             <input type="text" class="form-control-plaintext" value="{{ $art->style }}" readonly>
@@ -82,31 +83,30 @@
                              <label class="text-muted" for="material">Material:</label>
                             <input type="text" class="form-control-plaintext" value="{{ $art->material }}" readonly>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="form-row">
-                        <div class="form-group col-md-4">
+                        {{-- <div class="form-group col-md-4">
                              <label class="text-muted" for="size">Size:</label>
                             <input type="text" class="form-control-plaintext" value="{{ $art->size }}" readonly>
-                        </div>
-
+                        </div> --}}
                         <div class="form-group col-md-4">
                              <label class="text-muted" for="height">Dimension:</label>
-                            <input type="text" class="form-control-plaintext" value="{{ $art->height .' x '.$art->width.' x '.$art->depth }}" readonly>
-                        </div>
-
-                        <div class="form-group col-md-4">
-                             <label class="text-muted" for="price">Price:</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control-plaintext" value="₱ {{ $art->price }}" readonly>
-                            </div>
+                             <h5 class="text-justify" style="padding-left: 10px;">{{ $art->height .' x '.$art->width.' x '.$art->depth }}</h5>
+                            {{-- <input type="text" class="form-control-plaintext" value="{{ $art->height .' x '.$art->width.' x '.$art->depth }}" readonly> --}}
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label class="text-muted" for="description">Description:</span></label>
-                        <p>{{ $art->description }}</p>
+                        <p class="text-justify">{{ $art->description }}</p>
                     </div>
+                    <div class="form-group">
+                        <label class="text-muted" for="price">Price:</label>
+                       <div class="input-group mb-2">
+                           <h3 class="text-justify">₱{{ $art->price }}</h3>
+                           {{-- <input type="text" class="form-control-plaintext" value="₱ {{ $art->price }}" readonly> --}}
+                       </div>
+                   </div>
 
                     <div class="form-group">
                         <label class="text-muted" for="Tag">Tag:</label>
@@ -114,15 +114,15 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a href="#" class="btn btn-danger">
-                        <i class="fa fa-heart"></i>
+                    <a href="#">
+                        <i class="fa fa-heart-o" style="font-size:25px;  color: red;"></i>
                     </a>
 
-                    <a href="{{ route('art.watch', $art->id) }}" class="btn btn-success">
-                        <i class="fa fa-eye"></i>
+                    <a href="{{ route('art.watch', $art->id) }}">
+                        <i class="fa fa-eye" style="font-size:25px; padding: 10px;"></i>
                     </a>
 
-                    <a href="{{ route('art.reserve', $art) }}" class="btn btn-outline-info">Reserve</a>
+                    <a href="{{ route('art.reserve', $art) }}" class="btn btn-success btn-lg" style="float:right;">Reserve</a>
                 </div>
             </div>
 
