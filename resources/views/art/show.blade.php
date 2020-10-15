@@ -103,7 +103,7 @@
                     <div class="form-group">
                         <label class="text-muted" for="price">Price:</label>
                        <div class="input-group mb-2">
-                           <h3 class="text-justify">₱{{ $art->price }}</h3>
+                           <h3 class="text-justify">₱{{ number_format($art->price, 2) }}</h3>
                            {{-- <input type="text" class="form-control-plaintext" value="₱ {{ $art->price }}" readonly> --}}
                        </div>
                    </div>
