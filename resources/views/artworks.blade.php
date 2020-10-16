@@ -23,18 +23,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
         <style>
-            /* @font-face{font-family:'Calluna';
-            src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/callunasansregular-webfont.woff') format('woff');
-            }
-            body {
-                background: url(//subtlepatterns.com/patterns/scribble_light.png);
-            font-family: Calluna, Arial, sans-serif;
-            min-height: 1000px;
-            } */
             #columns {
                 column-width: 320px;
                 column-gap: 15px;
-            width: 90%;
+                width: 90%;
                 max-width: 1100px;
                 margin: 50px auto;
             }
@@ -47,8 +39,8 @@
                 padding: 15px;
                 padding-bottom: 10px;
                 transition: opacity .4s ease-in-out;
-            display: inline-block;
-            column-break-inside: avoid;
+                display: inline-block;
+                column-break-inside: avoid;
             }
 
             div#columns figure img {
@@ -59,82 +51,87 @@
             }
 
             div#columns figure figcaption {
-            font-size: .9rem;
+                font-size: .9rem;
                 color: #444;
-            line-height: 1.5;
+                line-height: 1.5;
+                text-align: center;
             }
 
             div#columns small { 
-            font-size: 1rem;
-            float: right; 
-            text-transform: uppercase;
-            color: #aaa;
+                font-size: 1rem;
+                float: right; 
+                text-transform: uppercase;
+                color: #aaa;
             } 
 
             div#columns small a { 
-            color: #666; 
-            text-decoration: none; 
-            transition: .4s color;
+                color: #666; 
+                text-decoration: none; 
+                transition: .4s color;
             }
 
-            /* div#columns:hover figure:not(:hover) {
-                opacity: 0.4;
-            } */
-
             @media screen and (max-width: 750px) { 
-            #columns { column-gap: 0px; }
-            #columns figure { width: 100%; }
+                #columns { column-gap: 0px; }
+                #columns figure { width: 100%; }
             }
         </style>
     </head>
 <body>
+
 {{-- Navigation --}}
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgba(255, 255, 255, 0.25);">
-            <a class="navbar-brand" href="/">
-                <img src="{{ asset('images/logo/logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-            </a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/artworks">Artworks <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/artists">Artists</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/galleries">Galleries</a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">
-                            Login
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register">
-                            Sign Up
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
+    <div id="pattern">
+        <img src="/images/spattern.png" alt="">
     </div>
+    
+    <nav class="navbar navbar-expand-lg navbar-light mt-4 mb-5">
+        <a class="navbar-brand" href="/">
+            <img src="{{ asset('images/logo/logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/artworks">Artworks <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/artists">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/galleries">Galleries</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">
+                        Sign Up
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
 
 
         <div id="columns">
             <figure>
                 <img src="{{ asset('/images/image1.png') }}">
-                <figcaption>Cinderella wearing European fashion of the mid-1860’s</figcaption>
+                <figcaption>
+                    <p>Artist Name</p>
+                    <p>Artwork Title, Year</p>
+                    <a href="">Gallery Name Located</a>
+                    <p>Price</p>
+                </figcaption>
             </figure>
                 
             <figure>

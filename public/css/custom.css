@@ -2,6 +2,14 @@ html {
     scroll-behavior: smooth;
 }
 
+#pattern {
+    margin-top: 17px;
+    width: 100%;
+    background: url('/images/spattern.png');
+    background-repeat: repeat;
+    background-size: 34px 27px;
+}
+
 a {
     text-decoration: none !important;
     color: black;
@@ -65,7 +73,10 @@ a:hover {
     color: #c48935 !important;
 }
 
-
+.active {
+    text-decoration: underline !important;
+    color: #c48935 !important;
+}
 
 .picture-container {
     /* background-color: gray; */

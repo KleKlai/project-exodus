@@ -305,7 +305,7 @@
                 </div>
             </div>
             <div class="container" style="text-align: center;">
-                <button type="button" class="btn btn-link">View All</button>
+                <a href="/artworks" type="button" class="btn-link">View All</a>
             </div>
 
             {{--  Featured Artist  --}}
@@ -336,7 +336,7 @@
                 </div>
             </div>
             <div class="container" style="text-align: center;">
-                <button type="button" class="btn btn-link">View All</button>
+            <a href="/artists" type="button" class="btn-link">View All</a>
             </div>
 
             <div class="h-divider" id="featuredGalleries">
@@ -369,7 +369,7 @@
                 </div>
             </div>
             <div class="container" style="text-align: center;">
-                <button type="button" class="btn btn-link">View All</button>
+                <a href="/galleries" type="button" class="btn-link">View All</a>
             </div>
 
             <div class="h-divider">
