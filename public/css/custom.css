@@ -1,8 +1,25 @@
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none !important;
+    color: black;
+}
+
+a:hover {
+    color: black;
+}
+
 .background-image {
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.col-md p {
+    text-align: center;
 }
 
 .h-divider{
@@ -18,7 +35,7 @@
 }
 
 .cover-picture {
-    height: 700px;
+    height: 600px;
     position: relative;
     background-attachment: fixed;
 }
@@ -29,12 +46,11 @@
     width: 100%;
 }
 
-.topnav {
+/* .topnav {
     overflow: hidden;
     background-color: rgba(255, 255, 255, 0.25);
 }
 
-/* Navbar links */
 .topnav a {
     float: left;
     color: #000000;
@@ -43,18 +59,46 @@
     text-decoration: none;
     font-size: 14px;
   }
-
-.topnav a:hover {
-    text-decoration: underline;
-    color: #c48935;
+} */
+.nav-link:hover {
+    text-decoration: underline !important;
+    color: #c48935 !important;
 }
+
 
 
 .picture-container {
     /* background-color: gray; */
+    /* height: 300px; */
+    background-color: #c48935;
+    display: inline-block;
+    /* margin: 10px; */
     height: 300px;
-    background-color: rgba(0,0,0,0.25);
+    width: 100%;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
+
+.picture-container:hover {
+    background-size: 120%;
+}
+.picture-container p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.5em;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
 
 
 .picture-title {
@@ -66,13 +110,13 @@
     text-decoration: none;
 }
 
-.picture-inner-title {
+/* .picture-inner-title {
     padding-top: 7rem;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
     color: #c48935;
-}
+} */
 
 .header-container {
     position: absolute;
@@ -108,7 +152,15 @@
 .newsletter {
     background-color: #c48935;
     width: 100%;
-    height: 10vh;
+    height: 100px;
     padding: 2rem;
     text-align: center;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .newsletter {
+        padding: 1rem;
+        height: 120px;
+    }
 }

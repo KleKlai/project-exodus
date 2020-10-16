@@ -101,3 +101,16 @@ Route::post('ticket/archive/{ticket}', 'Help\Ticket\ComponentController@archive'
 Route::patch('ticket/status/{ticket}', 'Help\Ticket\ComponentController@status')->name('ticket.status');
 
 Route::resource('conversation', 'Help\Ticket\ConversationController');
+
+
+Route::get('galleries', function() {
+    return view('galleries');
+});
+
+Route::get('artworks', function() {
+    return view('artworks');
+});
+
+Route::get('artists', function() {
+    return view('artists');
+});
