@@ -114,3 +114,11 @@ Route::get('artworks', function() {
 Route::get('artists', function() {
     return view('artists');
 });
+
+Route::get('artistprofile', function() {
+    return view('artistprofile');
+});
+
+Route::get('gallerydetails', function() {
+    return view('gallerydetails');
+});

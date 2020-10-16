@@ -70,15 +70,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md">
-                    <a href="">
+                    <a href="/gallerydetails">
                         <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
                         </div>
-                        <p class="picture-title">GALLERY NAME</p>
-                        <p>Gallery description will be put here.</p>
+                        <p class="picture-title link">TheBauhaus Gallery</p>
                     </a>
+                    <p>Whether newsworthy moments or significant artistic achievements, these stories represent our passion for making outstanding art available for everyone. TheBauhaus Gallery feature stories and go behind the scenes to reveal some of the projects we are most excited about that have transformed artists' lives and people's homes.</p>
                 </div>
                 <div class="col-md">
-                    <a href="">
+                    <a href="/gallerydetails">
                         <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');" >
                         </div>
                         <p class="picture-title">GALLERY NAME</p>
@@ -86,7 +86,7 @@
                     </a>
                 </div>
                 <div class="col-md">
-                    <a href="">
+                    <a href="/gallerydetails">
                         <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
                         </div>
                         <p class="picture-title">GALLERY NAME</p>

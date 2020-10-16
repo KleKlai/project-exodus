@@ -10,6 +10,10 @@ html {
     background-size: 34px 27px;
 }
 
+.center-content {
+    text-align: center;
+}
+
 a {
     text-decoration: none !important;
     color: black;
@@ -17,6 +21,10 @@ a {
 
 a:hover {
     color: black;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
 
 .background-image {
@@ -84,7 +92,7 @@ a:hover {
     background-color: #c48935;
     display: inline-block;
     /* margin: 10px; */
-    height: 300px;
+    height: 200px;
     width: 100%;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;

@@ -44,7 +44,7 @@
                         <a class="nav-link" href="/artworks">Artworks <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/artists">Artists</a>
+                        <a class="nav-link" href="/artists">Artists</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/galleries">Galleries</a>
@@ -67,30 +67,39 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="container center-content">
+
+            <h1>Artist Name</h1>
+            <p>Gallery Assigned, Museum Assigned</p>
+            <p>Gallery description will be put here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            <div class="h-divider">
+            
+            <div class="title">ARTWORKS</div>
             <div class="row">
                 <div class="col-md">
-                    <a href="/artistprofile">
-                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-53.jpg');"></div>
-                        <p class="picture-title">ARTIST NAME</p>
-                        <p>Gallery assigned, museum assigned.</p>
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-53.jpg');">
+                            <p>ARTWORK TITLE HERE</p>
+                        </div>
                     </a>
                 </div>
                 <div class="col-md">
-                    <a href="/artistprofile">
-                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-54.jpg');"></div>
-                        <p class="picture-title">ARTIST NAME</p>
-                        <p>Gallery assigned, museum assigned.</p>
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-54.jpg');">
+                            <p>THIS IS A VERY LONG VERY LOOONGARTWORK TITLE HERE</p>
+                        </div>
                     </a>
                 </div>
                 <div class="col-md">
-                    <a href="/artistprofile">
-                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-55.jpg');"></div>
-                        <p class="picture-title">ARTIST NAME</p>
-                        <p>Gallery assigned, museum assigned.</p>
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-55.jpg');">
+                            <p>ARTWORK TITLE HERE</p>
+                        </div>
                     </a>
                 </div>
             </div>
+
         </div>
 
     </body>
