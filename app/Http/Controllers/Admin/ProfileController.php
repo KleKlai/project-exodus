@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 use App\Mail\ProfileDeleted;
 use Illuminate\Http\Request;
+use App\Model\Profile\Type;
 use Carbon\Carbon;
 use App\User;
 use Log;
@@ -24,11 +25,17 @@ class ProfileController extends Controller
 
     public function myProfile(User $user)
     {
-        return view('admin.profile', compact('user'));
+        $gallery = Type::all();
+
+        return view('admin.profile', compact(
+            'user',
+            'gallery'
+        ));
     }
 
     public function updateUser(ProfileUpdateRequest $request, User $user)
     {
+
         $user->update($request->all());
 
         flash('Profile save successfully.')->success()->important();

@@ -60,13 +60,6 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label">Subcategory</label>
-                        <div class="col-sm-10">
-                            <input type="text" disabled class="form-control-plaintext" value="{{ $user->subcategory ?? 'NA' }}">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Biography</label>
                         <div class="col-sm-10">
                             {{ $user->bio ?? 'none' }}

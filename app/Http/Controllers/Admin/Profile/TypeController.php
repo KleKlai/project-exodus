@@ -10,7 +10,7 @@ class TypeController extends Controller
 {
     public function index()
     {
-        $data = Type::select(['id', 'category', 'subcategory'])->get();
+        $data = Type::select(['id', 'name'])->get();
 
         return view('admin.profile_component.category', compact('data'));
     }

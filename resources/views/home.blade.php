@@ -59,11 +59,18 @@
             </form>
         </div>
 
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#completeProfile">
+        Launch demo modal
+        </button>
+
         {{--  <a href="{{ url('contact') }}">Contact</a>  --}}
 
     </div>
 
 </div>
+
+@include('services.home_modal')
 
 @endsection
 

@@ -26,6 +26,7 @@
         "spatie/laravel-backup": "^6.11",
         "spatie/laravel-newsletter": "^4.8",
         "spatie/laravel-permission": "^3.16",
+        "uxweb/sweet-alert": "^2.0",
         "webpatser/laravel-uuid": "^3.0"
     },
     "require-dev": {

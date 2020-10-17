@@ -16,6 +16,7 @@ This project comes with pre installed packages that can help you in your develop
 - **[News Letter](https://github.com/spatie/laravel-newsletter)**
 - **[Laravel Excel](https://docs.laravel-excel.com/2.1/getting-started/)**
 - **[User Statistic](https://packagist.org/packages/rinvex/laravel-statistics)**
+- **[SweetAlert](https://github.com/uxweb/sweet-alert)**
 
 ### Candidate 
 - **[HTML Email](https://github.com/Snowfire/Beautymail)**

@@ -169,6 +169,7 @@ return [
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         'Barryvdh\Debugbar\ServiceProvider',
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -234,7 +235,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
-
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
     ],
 
 ];

@@ -22,6 +22,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
+    <!-- Sweet Alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <!-- Flash Message CSS -->
     {{--  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  --}}
 </head>
@@ -202,5 +205,7 @@
     <script>
         $('#flash-overlay-modal').modal();
     </script>
+
+    @include('sweet::alert')
 </body>
 </html>

@@ -15,7 +15,6 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Category</th>
-                <th scope="col">SubCategory</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -23,8 +22,7 @@
             @forelse($data as $key => $data)
                 <tr>
                     <th scope="row">{{ $key+1 }}</th>
-                    <td>{{ $data->category }}</td>
-                    <td>{{ $data->subcategory }}</td>
+                    <td>{{ $data->name }}</td>
                     <td>
                         <form action="{{ route('artist.category.destroy', $data) }}" method="post">
                             @csrf

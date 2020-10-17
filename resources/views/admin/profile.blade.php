@@ -28,7 +28,7 @@
                             <div class="input-group-text"><i class="fa fa-check-circle"></i></div>
                         </div>
                     @endif
-                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" {{ (!empty($user->email_verified_at)) ? 'disabled' : '' }}>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $user->name }}" {{ (!empty($user->email_verified_at)) ? 'readonly' : '' }}>
                     @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-6">
                 <label for="inputAddress">Mobile</label>
                 <div class="input-group mb-2">
                     <div class="input-group-prepend">
@@ -71,13 +71,15 @@
                     @enderror
                 </div>
             </div>
-            <div class="form-group col-md-4">
-                <label for="inputAddress">Category</label>
-                <input type="text" class="form-control" value="{{ $user->category }}" disabled>
-            </div>
-            <div class="form-group col-md-4">
-                <label for="inputAddress">Sub-Category</label>
-                <input type="text" class="form-control" value="{{ $user->subcategory ?? 'none' }}" disabled>
+            <div class="form-group col-md-6">
+                <label for="inputAddress">Gallery</label>
+                <select name="category" class="form-control" name="category"
+                {{ (!empty($user->category)) ? 'disabled' : ''}}>
+                    <option value="">-</option>
+                    @foreach($gallery as $gallery)
+                        <option value="{{ $gallery->name }}" {{ ($user->category == $gallery->name) ? 'selected' : '' }}>{{ $gallery->name }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="form-group">

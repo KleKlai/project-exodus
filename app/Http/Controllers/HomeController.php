@@ -8,6 +8,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\User;
 use App\Model\Art;
+use App\Model\Profile\Type;
 use App\Model\Support\Ticket;
 
 class HomeController extends Controller
@@ -34,18 +35,19 @@ class HomeController extends Controller
         $artwork    = Art::all()->count();
         $ticket     = Ticket::all()->count();
 
+        $gallery    = Type::select('name')->get();
+
         $table = \DB::getSchemaBuilder()->getColumnListing('users');
 
         //Remove Element in Array
         $table = \array_diff($table, ["password", "remember_token"]);
 
-        // dd(Art::with('user')->get());
-
         return view('home', compact(
             'user',
             'artwork',
             'ticket',
-            'table'
+            'table',
+            'gallery'
         ));
     }
 }
