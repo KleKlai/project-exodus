@@ -126,13 +126,13 @@
                 </div>
             </div>
 
+
             <div class="card mt-2 {{ ($art->status == 'Pending') ? 'd-none' : '' }}" >
                 <div class="card-header">Remark</div>
                 <div class="card-body">
                     {{ $art->remark ?? 'No Remarks'}}
                 </div>
             </div>
-
 
             @if (!empty($art->remarks))
                 <div class="card mt-2">
@@ -148,6 +148,161 @@
         </div>
     </div>
 </div>
+
+<div id="columns">
+            <figure>
+                <a href=""><img src="{{ url($art->attachment) }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">{{ $art->user->name }}</a>
+                    <p>{{ $art->name }}</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>₱{{ number_format($art->price, 2) }}</div>
+                </figcaption>
+            </figure>
+                
+            <figure>
+                <a href=""><img src="{{ url($art->attachment) }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">{{ $art->user->name }}</a>
+                    <p>{{ $art->name }}</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>₱{{ number_format($art->price, 2) }}</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
+                <figcaption>
+                    <a href="/artistprofile" class="link">Artist Name</a>
+                    <p>Artwork Title, Year</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
+                </figcaption>
+            </figure>
+
+
+            <small>Art &copy; <a href="//clairehummel.com">Claire Hummel</a></small>
+        </div>
 
 <!-- Update Art Modal -->
 <div class="modal fade" id="updateArtModal" tabindex="-1" role="dialog" aria-labelledby="updateArtModal" aria-hidden="true">

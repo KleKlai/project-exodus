@@ -61,8 +61,7 @@
                         required
                         autofocus
                         maxlength="10"
-                        minlength="10"
-                    >
+                        minlength="10">
 
                     @error('mobile')
                         <span class="invalid-feedback" role="alert">
