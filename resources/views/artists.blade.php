@@ -72,23 +72,23 @@
                 <div class="col-md">
                     <a href="/artistprofile">
                         <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-53.jpg');"></div>
-                        <p class="picture-title">ARTIST NAME</p>
-                        <p>Gallery assigned, museum assigned.</p>
+                        <p class="picture-title link">ARTIST NAME</p>
                     </a>
+                    <p>Gallery assigned, museum assigned.</p>
                 </div>
                 <div class="col-md">
                     <a href="/artistprofile">
                         <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-54.jpg');"></div>
-                        <p class="picture-title">ARTIST NAME</p>
-                        <p>Gallery assigned, museum assigned.</p>
+                        <p class="picture-title link">ARTIST NAME</p>
                     </a>
+                    <p>Gallery assigned, museum assigned.</p>
                 </div>
                 <div class="col-md">
                     <a href="/artistprofile">
                         <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-55.jpg');"></div>
-                        <p class="picture-title">ARTIST NAME</p>
-                        <p>Gallery assigned, museum assigned.</p>
+                        <p class="picture-title link">ARTIST NAME</p>
                     </a>
+                    <p>Gallery assigned, museum assigned.</p>
                 </div>
             </div>
         </div>

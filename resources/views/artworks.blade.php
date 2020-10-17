@@ -21,60 +21,6 @@
 
         {{-- Font --}}
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-        <style>
-            #columns {
-                column-width: 320px;
-                column-gap: 15px;
-                width: 90%;
-                max-width: 1100px;
-                margin: 50px auto;
-            }
-
-            div#columns figure {
-                background: #fefefe;
-                border: 2px solid #fcfcfc;
-                box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-                margin: 0 2px 15px;
-                padding: 15px;
-                padding-bottom: 10px;
-                transition: opacity .4s ease-in-out;
-                display: inline-block;
-                column-break-inside: avoid;
-            }
-
-            div#columns figure img {
-                width: 100%; height: auto;
-                border-bottom: 1px solid #ccc;
-                padding-bottom: 15px;
-                margin-bottom: 5px;
-            }
-
-            div#columns figure figcaption {
-                font-size: .9rem;
-                color: #444;
-                line-height: 1.5;
-                text-align: center;
-            }
-
-            div#columns small { 
-                font-size: 1rem;
-                float: right; 
-                text-transform: uppercase;
-                color: #aaa;
-            } 
-
-            div#columns small a { 
-                color: #666; 
-                text-decoration: none; 
-                transition: .4s color;
-            }
-
-            @media screen and (max-width: 750px) { 
-                #columns { column-gap: 0px; }
-                #columns figure { width: 100%; }
-            }
-        </style>
     </head>
 <body>
 
@@ -125,12 +71,12 @@
 
         <div id="columns">
             <figure>
-                <img src="{{ asset('/images/image1.png') }}">
+                <a href=""><img src="{{ asset('/images/image1.png') }}"></a>
                 <figcaption>
-                    <p>Artist Name</p>
+                    <a href="/artistprofile" class="link">Artist Name</a>
                     <p>Artwork Title, Year</p>
-                    <a href="">Gallery Name Located</a>
-                    <p>Price</p>
+                    <a href="/gallerydetails" class="link">Gallery Name Located</a>
+                    <div>Price</div>
                 </figcaption>
             </figure>
                 
