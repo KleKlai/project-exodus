@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\User;
+use SweetAlert;
 use App\Model\Art;
 use App\Model\Profile\Type;
 use App\Model\Support\Ticket;
@@ -41,6 +42,8 @@ class HomeController extends Controller
 
         //Remove Element in Array
         $table = \array_diff($table, ["password", "remember_token"]);
+
+        alert()->info('Complete youur profile setup');
 
         return view('home', compact(
             'user',
