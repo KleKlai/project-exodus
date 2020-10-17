@@ -363,9 +363,9 @@
                     <a href="">
                         <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
                         </div>
-                        <div class="picture-title link">GALLERY NAME</div>
-                    </a>
+                        <p class="picture-title">GALLERY NAME</p>
                         <p>Gallery description will be put here.</p>
+                    </a>
                 </div>
             </div>
             <div class="container" style="text-align: center;">

@@ -68,8 +68,6 @@
         </div>
     </nav>
 
-        <div class="title">DABAKAN ARTWORKS</div>
-        <div class="h-divider container" id="featuredArtworks">
 
         <div id="columns">
             <figure>

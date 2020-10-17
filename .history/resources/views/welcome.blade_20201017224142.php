@@ -448,7 +448,7 @@
 
                     </div>
                     <div class="col-md-2">
-                        <button type="button" class="btn btn-outline-dark text-white border-white">Subcribe</button>
+                        <button type="button" class="btn btn-outline-dark text-white border-white hover:border-transparent">Subcribe</button>
 
                     </div>
                 </div>

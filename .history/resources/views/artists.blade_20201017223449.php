@@ -44,10 +44,10 @@
                         <a class="nav-link" href="/artworks">Artworks <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/artists">Artists</a>
+                        <a class="nav-link active" href="/artists">Artists</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/galleries">Galleries</a>
+                        <a class="nav-link" href="/galleries">Galleries</a>
                     </li>
                 </ul>
 
@@ -67,34 +67,28 @@
             </div>
         </nav>
 
-        <div class="title">DABAKAN GALLERIES</div>
-        <div class="h-divider container" id="featuredArtworks">
-
-        <div class="container mt-5">
+        <div class="container">
             <div class="row">
                 <div class="col-md">
-                    <a href="/gallerydetails">
-                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
-                        </div>
-                        <p class="picture-title link">TheBauhaus Gallery</p>
+                    <a href="/artistprofile">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-53.jpg');"></div>
+                        <p class="picture-title link">ARTIST NAME</p>
                     </a>
-                    <p>Whether newsworthy moments or significant artistic achievements, these stories represent our passion for making outstanding art available for everyone. TheBauhaus Gallery feature stories and go behind the scenes to reveal some of the projects we are most excited about that have transformed artists' lives and people's homes.</p>
+                    <p>Gallery assigned, museum assigned.</p>
                 </div>
                 <div class="col-md">
-                    <a href="/gallerydetails">
-                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');" >
-                        </div>
-                        <p class="picture-title">GALLERY NAME</p>
-                        <p>Gallery description will be put here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <a href="/artistprofile">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-54.jpg');"></div>
+                        <p class="picture-title link">ARTIST NAME</p>
                     </a>
+                    <p>Gallery assigned, museum assigned.</p>
                 </div>
                 <div class="col-md">
-                    <a href="/gallerydetails">
-                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
-                        </div>
-                        <p class="picture-title">GALLERY NAME</p>
-                        <p>Gallery description will be put here.</p>
+                    <a href="/artistprofile">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-55.jpg');"></div>
+                        <p class="picture-title link">ARTIST NAME</p>
                     </a>
+                    <p>Gallery assigned, museum assigned.</p>
                 </div>
             </div>
         </div>
