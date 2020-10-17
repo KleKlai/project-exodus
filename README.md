@@ -14,6 +14,8 @@ This project comes with pre installed packages that can help you in your develop
 - **[Flash Message](https://github.com/laracasts/flash)**
 - **[Log Reader](https://laravelarticle.com/laravel-log-reader)**
 - **[News Letter](https://github.com/spatie/laravel-newsletter)**
+- **[Laravel Excel](https://docs.laravel-excel.com/2.1/getting-started/)**
+- **[User Statistic](https://packagist.org/packages/rinvex/laravel-statistics)**
 
 ### Candidate 
 - **[HTML Email](https://github.com/Snowfire/Beautymail)**

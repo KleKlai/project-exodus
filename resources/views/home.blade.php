@@ -26,36 +26,41 @@
             <div class="card">
                 <div class="card-body">
                     <h6 class="font-weight-bold">Ticket</h6>
-                    <p class="card-text">560</p>
+                    <p class="card-text">{{ $ticket }}</p>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <div class="row justify-content-center mt-2">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="card mt-2">
+        <div class="card-header">{{ __('User') }}</div>
 
-                @can('create art')
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
-                        {{ __('You are logged in!') }}
-                    </div>
-                @endcan
-
-                {{--  <a href="{{ url('contact') }}">Contact</a>  --}}
-
-            </div>
-
-            @include('services.newsletter')
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="userData">User Data</label>
+                    <select multiple class="form-control" name="userData">
+                        @foreach($table as $column)
+                            <option value="{{ $column }}">{{ $column }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Verified
+                    </label>
+                </div>
+                <div class="form-group mt-2">
+                    <button class="btn btn-outline-success">Export</button>
+                    <button class="btn btn-outline-info">Export All</button>
+                </div>
+            </form>
         </div>
+
+        {{--  <a href="{{ url('contact') }}">Contact</a>  --}}
+
     </div>
 
 </div>

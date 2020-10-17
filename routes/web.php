@@ -101,3 +101,30 @@ Route::post('ticket/archive/{ticket}', 'Help\Ticket\ComponentController@archive'
 Route::patch('ticket/status/{ticket}', 'Help\Ticket\ComponentController@status')->name('ticket.status');
 
 Route::resource('conversation', 'Help\Ticket\ConversationController');
+
+
+// TODO: Sub Musuem
+Route::get('galleries', function() {
+    return view('welcome');
+});
+
+Route::get('artworks', function() {
+    return view('welcome');
+});
+
+Route::get('artists', function() {
+    return view('welcome');
+});
+
+Route::get('Bakaw', 'Museum\BakawController@index')->name('bakaw.index');
+Route::get('Balangay', 'Museum\BalangayController@index')->name('balangay.index');
+Route::get('Dabakan', 'Museum\DabakanController@index')->name('dabakan.index');
+Route::get('Heart', 'Museum\HeartController@index')->name('heart.index');
+Route::get('Kaban', 'Museum\KabanController@index')->name('kaban.index');
+Route::get('Kulintang', 'Museum\KulintangController@index')->name('kulintang.index');
+Route::get('Lamin', 'Museum\LaminController@index')->name('lamin.index');
+Route::get('Lullaby', 'Museum\LullabyController@index')->name('lullaby.index');
+Route::get('Tambol', 'Museum\TambolController@index')->name('tambol.index');
+Route::get('Vinta', 'Museum\VintaController@index')->name('vinta.index');
+
+Route::get('export', 'Admin\Export\User@export')->name('user.export');

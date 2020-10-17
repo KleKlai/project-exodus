@@ -58,10 +58,10 @@
                                 <a class="dropdown-item" href="{{ route('art.status.index') }}">Status</a>
                             </div>
                             </li>
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Management
-                            </a>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Management
+                        </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="{{ route('user.index') }}">User</a>
                                 <a class="dropdown-item" href="{{ route('user.trash') }}">Garbage</a>
@@ -72,6 +72,23 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{{ route('ticket.index') }}">Support</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Museum
+                            </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ route('dabakan.index') }}">Dabakan</a>
+                                    <a class="dropdown-item" href="{{ route('kaban.index') }}">Kaban</a>
+                                    <a class="dropdown-item" href="{{ route('kulintang.index') }}">Kulintang</a>
+                                    <a class="dropdown-item" href="{{ route('heart.index') }}">Heart</a>
+                                    <a class="dropdown-item" href="{{ route('lullaby.index') }}">Lullaby</a>
+                                    <a class="dropdown-item" href="{{ route('tambol.index') }}">Tambol</a>
+                                    <a class="dropdown-item" href="{{ route('lamin.index') }}">Lamin</a>
+                                    <a class="dropdown-item" href="{{ route('balangay.index') }}">Balangay</a>
+                                    <a class="dropdown-item" href="{{ route('vinta.index') }}">Vinta</a>
+                                    <a class="dropdown-item" href="{{ route('bakaw.index') }}">Bakaw</a>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 @endauth
