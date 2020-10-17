@@ -1,0 +1,13 @@
+.background-image{
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+
+.artwork-picture {
+    max-width:400px;
+    max-height: 800px;
+}
