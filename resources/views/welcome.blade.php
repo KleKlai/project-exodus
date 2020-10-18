@@ -110,24 +110,27 @@
                         <div class="container">
                         <div class="row featured">
                             <div class="col-md-4">
-                                <div>
+                                <div class="module mid">
                                     <img src="/images/img/blog-3.jpg" class="img-circle img-thumbnail">
+                                    <h2>Artworks</h2>
                                         <p></p>
                                         <a href="#" class="btn btn-link">View More</a>
                                 </div>
                             </div>
 
                         <div class="col-md-4">
-                            <div>
+                            <div class="module mid">
                                 <img src="/images/img/blog-2.jpg" class="img-circle img-thumbnail">
+                                <h2>Artists</h2>
                                 <p></p>
                                 <a href="#" class="btn btn-link">View More</a>
                             </div>
                         </div>
 
                         <div class="col-md-4">
-                            <div>
+                            <div class="module mid">
                                 <img src="/images/img/blog-1.jpg" class="img-circle img-thumbnail">
+                                <h2>Galleries</h2>
                                 <p></p>
                                 <a href="#" class="btn btn-link">View More</a>
                             </div>
@@ -139,15 +142,111 @@
                     <div class="container row">
                         <div class="col-md-10">
                             <span class="text">Get the latest art stories and collections by simply 'Subscribe'</span>
-
                         </div>
                         <div class="col-md-2">
                             <button type="button" class="btn btn-outline-dark text-white border-white">Subcribe</button>
-
                         </div>
                     </div>
                 </div>
+                <footer class="footer-area footer--light">
+            <div class="footer-big">
+                <!-- start .container -->
+                <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4">
+                    <div class="footer-widget">
+                        <div class="footer-menu footer-menu--1">
+                        <h4 class="footer-widget-title"><b>Mindanao Art</b></h4>
+                            <a href="#">Artworks</a>
+                            <br>
+                            <a href="#">Artists</a>
+                            <br>
+                            <a href="#">Museums</a>
+                            <br>
+                            <a href="#">Galleries</a>
+                            <br>
+                            <a href="#">Regional Groups</a>
+                        </div>
+                        <!-- end /.footer-menu -->
+                    </div>
+                    <!-- Ends: .footer-widget -->
+                    </div>
+                    <!-- end /.col-md-3 -->
+
+                    <div class="col-md-3 col-sm-4">
+                    <div class="footer-widget">
+                        <div class="footer-menu footer-menu--1">
+                        <h4 class="footer-widget-title"><b>Museums</b></h4>
+                            <a href="#">Dabakan</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#">Lamin</a>
+                            <br>
+                            <a href="#">Kaban</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#">Balangay</a>
+                            <br>
+                            <a href="#">Kulintang</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#">Vinta</a>
+                            <br>
+                            <a href="#">Heart</a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="#">Bakaw</a>
+                            <br>
+                            <a href="#">Lullaby</a>
+                            <br>
+                            <a href="#">Tambol</a>
+                        </div>
+                        <!-- end /.footer-menu -->
+                    </div>
+                    <!-- Ends: .footer-widget -->
+                    </div>
+
+                    <div class="col-md-3 col-sm-4">
+                    <div class="footer-widget">
+                        <div class="footer-menu footer-menu--1">
+                            <br>
+                            <a href="#">Artist Handbook</a>
+                            <br>
+                            <a href="#">User Guides</a>
+                            <br>
+                            <a href="#">About us</a>
+                            <br>
+                            <a href="#">FAQs</a>
+                        </div>
+                        <!-- end /.footer-menu -->
+                    </div>
+                    <!-- Ends: .footer-widget -->
+                    </div>
+                    <!-- end /.col-md-3 -->
+
+                    <div class="col-md-3 col-sm-4">
+                    <div class="footer-widget">
+                        <div class="footer-menu footer-menu--1">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                            <a href="#">support@mindanaoart.com</a>
+                            <br>
+                            <h6><b>Copyright 2020. Mindanao Art</b></h6>
+                        </div>
+                        <!-- end /.footer-menu -->
+                    </div>
+                    <!-- Ends: .footer-widget -->
+                    </div>
+                    <!-- end /.col-md-3 -->
+
+                </div>
+                <!-- end /.row -->
+                </div>
+                <!-- end /.container -->
             </div>
-        <div></div>
+            <!-- end /.footer-big -->
+
+            </footer>
+
     </body>
 </html>

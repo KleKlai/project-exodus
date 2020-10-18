@@ -12,8 +12,6 @@
     max-height: 800px;
 }
 
-
-
 /* PINTEREST LIKE IMAGES */
 #columns {
     column-width: 320px;
@@ -32,7 +30,6 @@ div#columns figure {
     padding-bottom: 10px;
     transition: opacity .4s ease-in-out;
     display: inline-block;
-    column-break-inside: avoid;
 }
 
 div#columns figure img {
@@ -272,7 +269,6 @@ div#columns figure {
     padding-bottom: 10px;
     transition: opacity .4s ease-in-out;
     display: inline-block;
-    column-break-inside: avoid;
 }
 
 div#columns figure img {
@@ -330,7 +326,8 @@ body, figure {
   font-weight: 100;
 }
 div#captioned-gallery { 
-  width: 100%; overflow: hidden; 
+  width: 100%; 
+  overflow: hidden;
 }
 figure.slider { 
   position: relative; width: 500%;
@@ -340,7 +337,11 @@ figure.slider figure {
   width: 20%; height: auto;
   display: inline-block;  position: inherit; 
 }
-figure.slider img { width: 100%; height: 768px; }
+figure.slider img {
+     width: 100%; 
+     height: 100%; 
+    }
+
 figure.slider figure figcaption { 
   position: absolute; bottom: 0;
   background: rgba(0,0,0,0.4);
@@ -360,14 +361,93 @@ figure.slider figure figcaption {
 }
 .featured > div:hover > div{
     margin-top: -10px;
-    border: 2px solid #c48935;
+    border: 3px solid #c48935;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 5px 2px;
     background: #fff;
     transition: 0.5s;
 }
 
-  .img-fluid{
-    max-width: 100%;
-    height: auto;
-
+  .footer-big {
+   padding:50px 0 30px 0
   }
+  .footer-big .footer-widget {
+   margin-bottom:30px
+  }
+
+  .footer--light {
+   background:#e7e8ed
+  }
+  
+  .footer-menu {
+   padding-left:48px
+  }
+
+  .footer-menu--1 {
+   width:100%
+  }
+  .footer-widget-title {
+   line-height:42px;
+   margin-bottom:-4px;
+   font-size:18px
+  }
+  .mini-footer {
+   background:#192027;
+   text-align:center;
+   padding:32px 0
+  }
+  .mini-footer p {
+   margin:0;
+   line-height:26px;
+   font-size:15px;
+   color:#999
+  }
+  .mini-footer p a {
+   color:#5867dd
+  }
+  .mini-footer p a:hover {
+   color:#34bfa3
+  }
+  .widget-about img {
+   display:block;
+   margin-bottom:30px
+  }
+  .widget-about p {
+   font-weight:400
+  }
+  .widget-about .contact-details {
+   margin:30px 0 0 0
+  }
+  .widget-about .contact-details li {
+   margin-bottom:10px
+  }
+  .widget-about .contact-details li:last-child {
+   margin-bottom:0
+  }
+  .widget-about .contact-details li span {
+   padding-right:12px
+  }
+  .widget-about .contact-details li a {
+   color:#5867dd
+  }
+  @media (max-width:991px) {
+   .footer-menu {
+    padding-left:0
+   }
+  }
+
+  .mid h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
+  }
+
+
+  
+  
