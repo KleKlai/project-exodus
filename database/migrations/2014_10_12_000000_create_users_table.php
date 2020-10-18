@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('category')->nullable();
             $table->longText('bio')->nullable();
             $table->timestamp('verified')->nullable();
+            $table->json('museum')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

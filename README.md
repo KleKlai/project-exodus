@@ -22,5 +22,6 @@ This project comes with pre installed packages that can help you in your develop
 - **[HTML Email](https://github.com/Snowfire/Beautymail)**
 - **[Laravel Social Notification](https://laravel-notification-channels.com/)**
 - **[URL Slug](https://github.com/cviebrock/eloquent-sluggable)**
+- **[Laravel Taging](https://github.com/rtconner/laravel-tagging)**
 
 Make sure to run `composer install` first so the application can updated it self.

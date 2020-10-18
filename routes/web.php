@@ -127,4 +127,5 @@ Route::get('Lullaby', 'Museum\LullabyController@index')->name('lullaby.index');
 Route::get('Tambol', 'Museum\TambolController@index')->name('tambol.index');
 Route::get('Vinta', 'Museum\VintaController@index')->name('vinta.index');
 
-Route::get('export', 'Admin\Export\User@export')->name('user.export');
+Route::get('export/user', 'Admin\Export\Exports@UserExport')->name('user.export');
+Route::get('export/art', 'Admin\Export\Exports@ArtExport')->name('art.export');

@@ -37,93 +37,29 @@
                             </div>
                         </div>
 
-                        {{-- <div class="form-group row">
-                            <label for="email" class="col-sm-2 col-form-label">{{ __('Category') }}</label>
-
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Gallery</label>
                             <div class="col-sm-10">
-                                <select name="category" id="category" onchange="showOtherDropDown()" class="form-control @error('category') is-invalid @enderror" required>
-                                    <option value="" selected>-</option>
-                                    <option value="Gallery" {{ ($user->category == 'Gallery') ? 'selected' : '' }}>Gallery</option>
-                                    <option value="Regional Group" {{ ($user->category == 'Regional Group') ? 'selected' : '' }}>Regional Group</option>
-                                    <option value="Special Projects" {{ ($user->category == 'Special Projects') ? 'selected' : '' }}>Special Projects</option>
-                                    <option value="Featured Artist" {{ ($user->category == 'Featured Artist') ? 'selected' : '' }}>Featured Artist</option>
-                                </select>
-
-                                @error('category')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row d-none" id="gallery">
-                            <label for="email" class="col-sm-2 col-form-label">{{ __('Gallery') }}</label>
-
-                            <div class="col-sm-10">
-                                <select name="gallery" class="form-control @error('gallery') is-invalid @enderror" id="galleryInput">
-                                    <option value="" selected>-</option>
-                                    @foreach($gallery as $data)
-                                        <option value="{{ $data->name }}" {{ old('gallery') == $data->name ? "selected" :""}}>
-                                            {{ $data->name }}
-                                        </option>
+                                <select name="category" class="form-control" name="category"
+                                {{ (!empty($user->category)) ? 'disabled' : ''}}>
+                                    <option value="">-</option>
+                                    @foreach($gallery as $gallery)
+                                        <option value="{{ $gallery->name }}" {{ ($user->category == $gallery->name) ? 'selected' : '' }}>{{ $gallery->name }}</option>
                                     @endforeach
                                 </select>
-
-                                @error('gallery')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row d-none" id="regional">
-                            <label for="email" class="col-sm-2 col-form-label">{{ __('Regional Group') }}</label>
-
-                            <div class="col-sm-10">
-                                <select name="regional" class="form-control @error('regional') is-invalid @enderror" id="regionalInput">
-                                    <option value="" selected>-</option>
-                                    @foreach($regional as $data)
-                                        <option value="{{ $data->name }}" {{ old('regional') == $data->name ? "selected" :""}}>
-                                            {{ $data->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-
-                                @error('regional')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row d-none" id="special">
-                            <label for="email" class="col-sm-2 col-form-label">{{ __('Special Projects') }}</label>
-
-                            <div class="col-sm-10">
-                                <select name="special" class="form-control @error('special') is-invalid @enderror" id="specialInput">
-                                    <option value="" selected>-</option>
-                                    @foreach($special as $data)
-                                        <option value="{{ $data->name }}" {{ old('special') == $data->name ? "selected" :""}}>
-                                            {{ $data->name }}
-                                        </option>
-                                    @endforeach
-                                </select>
-
-                                @error('special')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div> --}}
 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Biography</label>
                             <div class="col-sm-10">
                                 <textarea name="bio" rows="3" class="form-control">{{ old('bio', $user->bio) }}</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-sm-2 col-form-label">Tags</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput">
                             </div>
                         </div>
 
