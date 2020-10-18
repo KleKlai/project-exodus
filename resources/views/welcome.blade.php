@@ -111,142 +111,312 @@
                         <div class="row featured">
                             <div class="col-md-4">
                                 <div class="module mid">
+                                    <a href="#featuredArtworks" class="btn btn-link">
                                     <img src="/images/img/blog-3.jpg" class="img-circle img-thumbnail">
                                     <h2>Artworks</h2>
                                         <p></p>
-                                        <a href="#" class="btn btn-link">View More</a>
+                                        View More</a>
                                 </div>
                             </div>
 
                         <div class="col-md-4">
-                            <div class="module mid">
+                            <div class="module mid"> 
+                                <a href="#featuredArtists" class="btn btn-link">
                                 <img src="/images/img/blog-2.jpg" class="img-circle img-thumbnail">
                                 <h2>Artists</h2>
                                 <p></p>
-                                <a href="#" class="btn btn-link">View More</a>
+                               View More</a>
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="module mid">
+                                <a href="#featuredGalleries" class="btn btn-link">
                                 <img src="/images/img/blog-1.jpg" class="img-circle img-thumbnail">
                                 <h2>Galleries</h2>
                                 <p></p>
-                                <a href="#" class="btn btn-link">View More</a>
+                                View More</a>
                             </div>
 		                </div>
 	                </div>
                 </div>
-               
-                <div class="newsletter">
-                    <div class="container row">
-                        <div class="col-md-10">
-                            <span class="text">Get the latest art stories and collections by simply 'Subscribe'</span>
-                        </div>
-                        <div class="col-md-2">
-                            <button type="button" class="btn btn-outline-dark text-white border-white">Subcribe</button>
-                        </div>
-                    </div>
-                </div>
-                <footer class="footer-area footer--light">
-            <div class="footer-big">
-                <!-- start .container -->
+
+                {{-- Content --}}
                 <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-4">
-                    <div class="footer-widget">
-                        <div class="footer-menu footer-menu--1">
-                        <h4 class="footer-widget-title"><b>Mindanao Art</b></h4>
-                            <a href="#">Artworks</a>
-                            <br>
-                            <a href="#">Artists</a>
-                            <br>
-                            <a href="#">Museums</a>
-                            <br>
-                            <a href="#">Galleries</a>
-                            <br>
-                            <a href="#">Regional Groups</a>
-                        </div>
-                        <!-- end /.footer-menu -->
-                    </div>
-                    <!-- Ends: .footer-widget -->
-                    </div>
-                    <!-- end /.col-md-3 -->
 
-                    <div class="col-md-3 col-sm-4">
-                    <div class="footer-widget">
-                        <div class="footer-menu footer-menu--1">
-                        <h4 class="footer-widget-title"><b>Museums</b></h4>
-                            <a href="#">Dabakan</a>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#">Lamin</a>
-                            <br>
-                            <a href="#">Kaban</a>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#">Balangay</a>
-                            <br>
-                            <a href="#">Kulintang</a>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#">Vinta</a>
-                            <br>
-                            <a href="#">Heart</a>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#">Bakaw</a>
-                            <br>
-                            <a href="#">Lullaby</a>
-                            <br>
-                            <a href="#">Tambol</a>
-                        </div>
-                        <!-- end /.footer-menu -->
-                    </div>
-                    <!-- Ends: .footer-widget -->
-                    </div>
+            {{--  Featured Artworks  --}}
+            <div class="h-divider" id="featuredArtworks">
 
-                    <div class="col-md-3 col-sm-4">
-                    <div class="footer-widget">
-                        <div class="footer-menu footer-menu--1">
-                            <br>
-                            <a href="#">Artist Handbook</a>
-                            <br>
-                            <a href="#">User Guides</a>
-                            <br>
-                            <a href="#">About us</a>
-                            <br>
-                            <a href="#">FAQs</a>
+            <div class="title">FEATURED ARTWORKS</div>
+            <div class="row">
+                <div class="col-md">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-53.jpg');">
+                            <p>ARTWORK TITLE HERE</p>
                         </div>
-                        <!-- end /.footer-menu -->
-                    </div>
-                    <!-- Ends: .footer-widget -->
-                    </div>
-                    <!-- end /.col-md-3 -->
-
-                    <div class="col-md-3 col-sm-4">
-                    <div class="footer-widget">
-                        <div class="footer-menu footer-menu--1">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                            <a href="#">support@mindanaoart.com</a>
-                            <br>
-                            <h6><b>Copyright 2020. Mindanao Art</b></h6>
-                        </div>
-                        <!-- end /.footer-menu -->
-                    </div>
-                    <!-- Ends: .footer-widget -->
-                    </div>
-                    <!-- end /.col-md-3 -->
-
+                    </a>
                 </div>
-                <!-- end /.row -->
+                <div class="col-md">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-54.jpg');">
+                            <p>THIS IS A VERY LONG VERY LOOONGARTWORK TITLE HERE</p>
+                        </div>
+                    </a>
                 </div>
-                <!-- end /.container -->
+                <div class="col-md">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-55.jpg');">
+                            <p>ARTWORK TITLE HERE</p>
+                        </div>
+                    </a>
+                </div>
             </div>
-            <!-- end /.footer-big -->
+            <div class="container" style="text-align: center;">
+                <a href="/artworks" type="button" class="btn-link">View All</a>
+            </div>
 
-            </footer>
+            {{--  Featured Artist  --}}
+            <div class="h-divider" id="featuredArtists">
 
+            <div class="title">FEATURED ARTISTS</div>
+            <div class="row">
+                <div class="col-md">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-53.jpg');"></div>
+                        <div class="picture-title link">ARTIST NAME</div>
+                    </a>
+                        <p>Gallery assigned, museum assigned.</p>
+                </div>
+                <div class="col-md">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-54.jpg');"></div>
+                        <div class="picture-title link">ARTIST NAME</div>
+                    </a>
+                        <p>Gallery assigned, museum assigned.</p>
+                </div>
+                <div class="col-md">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/TBH_RWSX-55.jpg');"></div>
+                        <div class="picture-title link">ARTIST NAME</div>
+                    </a>
+                        <p>Gallery assigned, museum assigned.</p>
+                </div>
+            </div>
+            <div class="container" style="text-align: center;">
+            <a href="/artists" type="button" class="btn-link">View All</a>
+            </div>
+
+            <div class="h-divider" id="featuredGalleries">
+
+            <div class="title">FEATURED GALLERIES</div>
+            <div class="row">
+                <div class="col-md">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                        </div>
+                        <div class="picture-title link">GALLERY NAME</div>
+                    </a>
+                        <p>Gallery description will be put here.</p>
+                </div>
+                <div class="col-md">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');" >
+                        </div>
+                        <div class="picture-title link">GALLERY NAME</div>
+                    </a>
+                        <p>Gallery description will be put here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+                <div class="col-md">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                        </div>
+                        <div class="picture-title link">GALLERY NAME</div>
+                    </a>
+                        <p>Gallery description will be put here.</p>
+                </div>
+            </div>
+            <div class="container" style="text-align: center;">
+                <a href="/galleries" type="button" class="btn-link">View All</a>
+            </div>
+
+            <div class="h-divider">
+
+            <div class="title">VISIT MINDANAO MUSEUMS</div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                            <p class="picture-inner-title">THEBAUHAUS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                            <p class="picture-inner-title">THEBAUHAUS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                            <p class="picture-inner-title">THEBAUHAUS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                            <p class="picture-inner-title">THEBAUHAUS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                            <p class="picture-inner-title">THEBAUHAUS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                            <p class="picture-inner-title">THEBAUHAUS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                            <p class="picture-inner-title">THEBAUHAUS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                            <p class="picture-inner-title">THEBAUHAUS</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <a href="">
+                        <div class="picture-container background-image" style="background-image: url('/images/galleries/thebauhaus.png');">
+                            <p class="picture-inner-title">THEBAUHAUS</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="newsletter">
+                <div class="container row">
+                    <div class="col-md-10">
+                        <span class="text">Get the latest art stories and collections by simply 'Subscribe'</span>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-outline-dark text-white border-white">Subcribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="footer-area footer--light">
+                <div class="footer-big">
+                    <!-- start .container -->
+                    <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4">
+                        <div class="footer-widget">
+                            <div class="footer-menu footer-menu--1">
+                            <h4 class="footer-widget-title"><b>Mindanao Art</b></h4>
+                                <a href="#">Artworks</a>
+                                <br>
+                                <a href="#">Artists</a>
+                                <br>
+                                <a href="#">Museums</a>
+                                <br>
+                                <a href="#">Galleries</a>
+                                <br>
+                                <a href="#">Regional Groups</a>
+                            </div>
+                            <!-- end /.footer-menu -->
+                        </div>
+                        <!-- Ends: .footer-widget -->
+                        </div>
+                        <!-- end /.col-md-3 -->
+
+                        <div class="col-md-3 col-sm-4">
+                        <div class="footer-widget">
+                            <div class="footer-menu footer-menu--1">
+                            <h4 class="footer-widget-title"><b>Museums</b></h4>
+                                <a href="#">Dabakan</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="#">Lamin</a>
+                                <br>
+                                <a href="#">Kaban</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="#">Balangay</a>
+                                <br>
+                                <a href="#">Kulintang</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="#">Vinta</a>
+                                <br>
+                                <a href="#">Heart</a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="#">Bakaw</a>
+                                <br>
+                                <a href="#">Lullaby</a>
+                                <br>
+                                <a href="#">Tambol</a>
+                            </div>
+                            <!-- end /.footer-menu -->
+                        </div>
+                        <!-- Ends: .footer-widget -->
+                        </div>
+
+                        <div class="col-md-3 col-sm-4">
+                        <div class="footer-widget">
+                            <div class="footer-menu footer-menu--1">
+                                <br>
+                                <a href="#">Artist Handbook</a>
+                                <br>
+                                <a href="#">User Guides</a>
+                                <br>
+                                <a href="#">About us</a>
+                                <br>
+                                <a href="#">FAQs</a>
+                            </div>
+                            <!-- end /.footer-menu -->
+                        </div>
+                        <!-- Ends: .footer-widget -->
+                        </div>
+                        <!-- end /.col-md-3 -->
+
+                        <div class="col-md-3 col-sm-4">
+                        <div class="footer-widget">
+                            <div class="footer-menu footer-menu--1">
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                                <a href="#">support@mindanaoart.com</a>
+                                <br>
+                                <h6><b>Copyright 2020. Mindanao Art</b></h6>
+                            </div>
+                            <!-- end /.footer-menu -->
+                        </div>
+                        <!-- Ends: .footer-widget -->
+                        </div>
+                        <!-- end /.col-md-3 -->
+                    </div>
+                    <!-- end /.row -->
+                    </div>
+                    <!-- end /.container -->
+                </div>
+                </footer>
+                <!-- end /.FOOTER -->
+            </div>
     </body>
 </html>
