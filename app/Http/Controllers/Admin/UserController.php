@@ -47,7 +47,7 @@ class UserController extends Controller
     {
 
         //Get all user art
-        $art = Art::where('user_id', $user->id)->with('user')->select('uuid', 'name')->get();
+        $art = Art::where('user_id', $user->id)->with('user')->select('uuid', 'title')->get();
 
         $login = Activity::where('causer_id', $user->id)
             ->where('log_name', 'Login')

@@ -40,7 +40,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-8">
                              <label class="text-muted" for="name">Artwork Title:</label>
-                             <h2 class="text-justify" style="padding-left: 10px; font-weight: bold;">{{ $art->name }}</h2>
+                             <h2 class="text-justify" style="padding-left: 10px; font-weight: bold;">{{ $art->title }}</h2>
                             {{-- <input type="text" class="form-control-plaintext" value="{{ $art->name }}" readonly> --}}
                         {{-- </div>
                         <div class="form-group col-md-8"> --}}

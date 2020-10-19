@@ -18,7 +18,7 @@ class CreateArtTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->uuid('uuid');
-            $table->string('name');
+            $table->string('title');
             $table->string('subject');
             $table->string('city');
             $table->string('category');
@@ -37,8 +37,8 @@ class CreateArtTable extends Migration
             $table->boolean('reserve')->nullable();
             $table->string('status');
             $table->string('remark')->nullable();
-            $table->softDeletes();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

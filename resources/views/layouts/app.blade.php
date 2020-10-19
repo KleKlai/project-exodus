@@ -27,6 +27,7 @@
 
     <!-- Flash Message CSS -->
     {{--  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  --}}
+    @yield('css')
 </head>
 <body>
     <div id="app">

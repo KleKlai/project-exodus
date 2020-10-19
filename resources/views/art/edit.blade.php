@@ -7,8 +7,8 @@
         @method('PATCH')
 
         <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $art->name) }}" name="name" required>
+            <label for="name">Title</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $art->title) }}" name="name" required>
 
             @error('name')
                 <span class="invalid-feedback" role="alert">

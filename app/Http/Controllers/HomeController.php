@@ -38,18 +38,12 @@ class HomeController extends Controller
 
         $gallery    = Type::select('name')->get();
 
-        $table = \DB::getSchemaBuilder()->getColumnListing('users');
-
-        //Remove Element in Array
-        $table = \array_diff($table, ["password", "remember_token"]);
-
-        alert()->info('Complete youur profile setup');
+        dd(User::role(['Admin'])->get());
 
         return view('home', compact(
             'user',
             'artwork',
             'ticket',
-            'table',
             'gallery'
         ));
     }
